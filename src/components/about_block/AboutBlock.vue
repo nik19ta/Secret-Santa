@@ -1,21 +1,32 @@
 <template>
-    <div>
-        <AboutBlockHeader />
-        <AboutBlockBody />
-    </div>
+<div>
+  <AboutBlockHeader @open='open' />
+  <AboutBlockBody id='div2' style="display : none" />
+</div>
 </template>
 
 <script>
 import AboutBlockHeader from "./AboutBlockHeader"
 import AboutBlockBody from "./AboutBlockBody";
-    export default {
-        name: 'AboutBlock',
-        components: {
-            AboutBlockHeader, AboutBlockBody
-        }
+import $ from 'jquery'
+
+
+export default {
+  name: 'AboutBlock',
+  mounted() {
+    console.log('mik');
+
+
+  },
+  components: {
+    AboutBlockHeader,
+    AboutBlockBody
+  },
+  methods: {
+    open() {
+      console.log('open');
+      $("div#div2").slideToggle();
     }
+  }
+}
 </script>
-
-<style>
-
-</style>

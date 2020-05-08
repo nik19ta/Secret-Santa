@@ -2,37 +2,37 @@
     <div class="list">
         <img src="../../assets/star.png" alt="">
         <div class="user1">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user2">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user3">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user4">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user5">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user6">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
         <div class="user7">
-            <div class="avatar"></div>
+            <img src="../../assets/avatar.png" class="avatar">
             <p class="name">Имя Фамилия</p>
             <p class="about">Инженер Разработчик</p>
         </div>
@@ -74,8 +74,5 @@ img {
 .name {
     font-weight: bold;
     font-size: 18px;
-}
-.about {
-
 }
 </style>

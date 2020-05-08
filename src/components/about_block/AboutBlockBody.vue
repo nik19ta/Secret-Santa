@@ -91,10 +91,14 @@ button {
     height: 60px;
     margin-top: 30px;
     width: 100%;
+    border: none;
     background-color: #FF645A;
     color: white;
     border-radius: 30px;
     font-weight: bold;
     font-size: 24px;
+}
+button:hover {
+    background-color: #b04740;
 }
 </style>
