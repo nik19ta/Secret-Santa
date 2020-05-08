@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -8,15 +7,20 @@ import ProfielPage from '@/components/profile/ProfielPage.vue'
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: 'Homepage',
-        component: Homepage
+  routes: [{
+      path: '/',
+      name: 'Homepage',
+      component: Homepage
     },
-        {
-            path: '/profile',
-            name: 'ProfielPage',
-            component: ProfielPage
-        },
-    ]
+    {
+      path: '/profile',
+      name: 'ProfielPage',
+      component: ProfielPage
+    },
+    {
+      path: '/takepart',
+      name: 'Homepage',
+      component: Homepage
+    },
+  ]
 })
