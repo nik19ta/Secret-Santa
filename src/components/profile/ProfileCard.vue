@@ -62,8 +62,8 @@ export default {
 .card {
   margin-top: 40px;
   margin-left: 40px;
-  min-height: 1207px;
-  min-width: 867px;
+  /* height: 1207px; */
+  width: 867px;
   background-color: white;
   border-radius: 40px;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
