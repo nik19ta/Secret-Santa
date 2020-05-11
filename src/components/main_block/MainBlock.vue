@@ -114,6 +114,8 @@
     width: 100%;
 }
 button {
+    outline: none;
+    cursor: pointer;
     height: 60px;
     margin-top: 140px;
     width: 80%;

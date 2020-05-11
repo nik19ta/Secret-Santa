@@ -22,19 +22,19 @@ def add():
     try:
         getData = request.json
 
-        aboutMe = getData['aboutMe']
-        Name = getData['Name']
-        wishList = getData['wishList']
-        dontLike = getData['dontLike']
+        about = getData['about']
+        blacklist = getData['blacklist']
+        branches = getData['branches']
+        departments = getData['departments']
+        name = getData['name']
+        wishlist = getData['wishlist']
+        email = getData['email']
         password = getData['password']
-        gmail = getData['gmail']
-        branch = getData['branch']
-        department = getData['department']
 
-        print(aboutMe,Name,wishList,dontLike)
+        print(about, blacklist, branches, departments, name, wishlist, email, password)
 
         mycursor = connection.cursor(buffered=True)
-        mycursor.execute(f'INSERT INTO users (aboutMe, Name, wishList, dontLike, password, gmail, branch, department) VALUES ({aboutMe}, {Name}, {wishList}, {dontLike}, {password}, {gmail}, {branch}, {department})')
+        mycursor.execute(f'INSERT INTO users (about, blacklist, branches, departments, name, wishlist, email, password) VALUES ({about}, {blacklist}, {branches}, {departments}, {name}, {wishlist}, {email}, {password})')
         connection.commit()
         mycursor.close()
 
