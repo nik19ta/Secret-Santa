@@ -1,8 +1,8 @@
 <template>
 <div class="body">
-  <button type="button" @click='toAdmin' v-if='!isAdmin' name="button"> Перейти в админ панель </button>
+  <button type="button" @click='toAdmin' v-if='dataProf[9] == "admin" && isAdminbtn ' name="button">Перейти в админ панель</button>
   <div class="cards">
-    <ProfileCard v-if='!isAdmin' />
+    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' />
     <ProfilePresentCard v-if='!isAdmin' />
     <admin v-if='isAdmin' />
   </div>
@@ -16,6 +16,9 @@ import admin from '../admin/admin'
 
 export default {
   name: 'ProfilePage',
+  props: {
+    dataProf: {}
+  },
   components: {
     ProfileCard,
     ProfilePresentCard,
@@ -23,13 +26,17 @@ export default {
   },
   data() {
     return {
-      isAdmin: false
+      isAdmin: false,
+      isAdminbtn: true,
+
     }
   },
   methods: {
     toAdmin() {
+      // this.isAdmin = !this.isAdmin;
       console.log('ni');
       this.isAdmin = !this.isAdmin;
+      this.isAdminbtn = !this.isAdminbtn;
     }
   }
 }

@@ -13,14 +13,15 @@
           <td>Статус</td>
         </tr>
         <tr v-for='item in data.success' v-bind:key='item' >
-          <td>{{item[2]}} </td>
-          <td>{{item[8]}} </td>
-          <td>{{item[7]}} </td>
+          <td>{{item[5]}} </td>
+          <td>{{item[4]}} </td>
+          <td>{{item[3]}} </td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
+          <!-- <td>{{item}}</td> -->
           <td> <input class='inputInTd' type="text" name="" value=""> </td>
         </tr>
 </table>
@@ -37,7 +38,7 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://localhost:5000/AllData",
+      url: "http://91.201.54.125:5000/AllData",
       success: function(data) {
         console.log(data);
         vm.data = data;
@@ -62,7 +63,7 @@ table{
   width: 100%;
 }
 td{
-  min-width: 200px;
+  min-width: 207px;
   height: 50px;
   background: #fff;
 }
