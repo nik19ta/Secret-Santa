@@ -1,19 +1,18 @@
 <template>
   <div class="card">
     <div class="wrapper">
-      <p>Мои подарки</p>
+      <p class="title">мои <br>подарки</p>
       <div class="present_info">
         <img src="../../assets/gifts/inactive_gift.png" alt="">
         <div class="gift">
-          <p class="gift_name">Здесь появится твой подарок</p>
-          <p class="about">Тайный Санта готовит подарок</p>
+          <p class="gift_name">Скоро тут появится  что-то интересное</p>
         </div>
       </div>
       <div class="hr">
         <hr>
       </div>
       <div class="form">
-        <label>Поделись своими эмоциями</label>
+        <label>Если ты уже получил подарок, <br>напиши о своих впечатлениях Тайному Санте :)</label>
         <div class="input_block">
           <textarea name="comment" v-model="emotions"></textarea>
           <div class="info_visited"></div>
@@ -42,8 +41,8 @@
   .card {
     margin-top: 40px;
     margin-right: 40px;
-    min-height: 1207px;
-    min-width: 867px;
+    min-height: 80%;
+    min-width: 45%;
     background-color: white;
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
@@ -52,10 +51,13 @@
     font-size: 64px;
     color: #FF645A;
   }
+  .title {
+    font-size: 42px;
+  }
   .present_info {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    height: 300px;
   }
   .gift_name {
     font-size: 32px ;
@@ -67,6 +69,8 @@
   }
   .photos img {
     cursor: pointer;
+    height: 155px;
+    width: 155px;
   }
   .gift {
     margin-left: 40px;
@@ -76,6 +80,9 @@
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 30px;
+  }
+  label {
+    margin-bottom: 10px;
   }
   .add_photo {
     cursor: pointer;
@@ -105,7 +112,7 @@
     margin-top: 30px;
     border: none;
     width: 40%;
-    background-color: #00A460;
+    background-color: #ff645a;
     color: white;
     border-radius: 30px;
     border-color: #DDDDDD;
@@ -147,16 +154,12 @@
     height: 150px;
     width: 700px;
   }
-  .about {
-    color: #494949;
-    font-size: 18px;
-  }
   .wrapper {
     display: flex;
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    max-width: 750px;
+    max-width: 85%;
   }
 
 </style>

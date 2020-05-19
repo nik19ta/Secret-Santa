@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .body {
   padding-top: 40px;
-  height: 1142px;
+  height: 800px;
 }
 
 h1 {

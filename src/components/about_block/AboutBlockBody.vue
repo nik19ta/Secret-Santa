@@ -46,7 +46,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 950px;
+        height: 900px;
         color: #494949;
     }
     .redline {

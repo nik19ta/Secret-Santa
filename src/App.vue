@@ -20,13 +20,6 @@ export default {
     }
   },
   mounted() {
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
     const vm = this;
     $.ajax({
       type: "POST",
@@ -42,12 +35,6 @@ export default {
   },
   methods: {
     endLogin(data) {
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
       this.dataProf = data;
 
     }
@@ -57,7 +44,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'CrocWebRegular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

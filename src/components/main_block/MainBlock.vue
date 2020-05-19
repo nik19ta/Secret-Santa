@@ -19,10 +19,6 @@
           <p class='count'>45</p>
           <p class='countText'>из отдела</p>
         </div>
-        <div class="component">
-          <p class='count'>268</p>
-          <p class='countText'>комнаты</p>
-        </div>
       </div>
       <button v-if='loginStatus == "Error"' @click='toLogin'> Войти</button>
       <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
@@ -105,8 +101,8 @@ a {
 
 .all {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  width: 350px;
   margin-top: -60px;
 }
 
