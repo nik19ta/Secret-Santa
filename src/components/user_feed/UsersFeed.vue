@@ -1,7 +1,7 @@
 <template>
     <div class="body">
         <div class="wrapper">
-            <h2>Уже принимают участие</h2>
+            <p class="title">Уже принимают <br>участие</p>
             <UserList />
         </div>
     </div>
@@ -19,19 +19,19 @@ import UserList from './UserList'
 
 <style scoped>
 .body {
-    height: 500px;
-    padding-top: 50px;
+    padding-top: 10px;
     background-color: #00A460;
 }
 .wrapper {
     margin-right: auto;
     margin-left:  auto;
-    max-width: 1700px;
+    max-width: 85%;
     padding-right: 10px;
     padding-left:  10px;
 }
-h2  {
-    font-size: 64px;
+.title  {
+    font-size: 40px;
+    line-height: 32px;
     color: white;
 }
 </style>

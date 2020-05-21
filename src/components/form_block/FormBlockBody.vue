@@ -1,7 +1,6 @@
 <template>
 <div class="body">
   <div class="wrapper">
-    <h1>Информация для <br>Санты</h1>
     <FormBlockInputs @myEvent='myEvent' />
   </div>
 </div>
@@ -25,8 +24,9 @@ export default {
 
 <style scoped>
 .body {
+  background-color: white;
   padding-top: 40px;
-  height: 800px;
+  padding-bottom: 50px;
 }
 
 h1 {
@@ -39,7 +39,7 @@ h1 {
   flex-direction: column;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1700px;
+  max-width: 85%;
   padding-right: 10px;
   padding-left: 10px;
 }

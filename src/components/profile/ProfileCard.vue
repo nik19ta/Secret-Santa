@@ -113,6 +113,7 @@ export default {
 }
 .title {
   font-size: 42px;
+  line-height: 32px;
 }
 label {
   color: #6B6B6B;
@@ -132,6 +133,7 @@ button {
   color: white;
   border-radius: 30px;
   border-color: #DDDDDD;
+  font-family: CrocWebRegular;
   font-size: 20px;
 }
 button:hover {
@@ -217,8 +219,6 @@ p {
   border-style: solid;
   border-color: #6B6B6B;
 }
-
-/* Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели */
 
 .circle_active {
   height: 18px;

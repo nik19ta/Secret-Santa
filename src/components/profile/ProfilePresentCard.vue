@@ -53,6 +53,7 @@
   }
   .title {
     font-size: 42px;
+    line-height: 32px;
   }
   .present_info {
     display: flex;
@@ -94,6 +95,7 @@
     color: #6B6B6B;
     border-radius: 30px;
     border-color: #DDDDDD;
+    font-family: CrocWebRegular;
     font-size: 20px;
   }
   .add_photo:hover {
@@ -116,10 +118,11 @@
     color: white;
     border-radius: 30px;
     border-color: #DDDDDD;
+    font-family: CrocWebRegular;
     font-size: 20px;
   }
   .send:hover {
-    background-color: #006e37;
+    background-color: #b04740;
   }
   label {
     color: #6B6B6B;

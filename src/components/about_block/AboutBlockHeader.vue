@@ -2,7 +2,7 @@
     <div class="header">
         <div class="wrapper">
             <h2>Как работает <br>проект</h2>
-            <img v-bind:class="[isClosed ? 'opened' : 'closed', 'transition']" @click='open' src="../../assets/arrows.png" alt="">
+            <img src="../../assets/arrows.svg" v-bind:class="[isClosed ? 'opened' : 'closed', 'transition']" @click='open' alt="">
         </div>
     </div>
 </template>
@@ -25,37 +25,38 @@
 </script>
 
 <style scoped>
-    .header {
-        height: 245px;
-        background-color: #FF645A;
-    }
-    h2 {
-        color: #ffffff;
-        font-size: 64px;
-    }
-    .wrapper {
-        display: flex;
-        flex-direction: row;
-        margin-right: auto;
-        margin-left: auto;
-        max-width: 1700px;
-    }
-    .closed {
-        margin-left: auto;
-        align-self: center;
-        cursor: pointer;
-        height: 92px;
-        width: 88px;
-    }
-    .opened {
-        margin-left: auto;
-        align-self: center;
-        cursor: pointer;
-        transform: rotate(90deg);
-        height: 92px;
-        width: 88px;
-    }
-    .transition {
-        transition: all 0.3s;
-    }
+.header {
+    padding-top: 40px;
+    background-color: white;
+}
+h2 {
+    color: #00A460;
+    font-size: 40px;
+    line-height: 32px;
+}
+.wrapper {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 85%;
+}
+
+.closed {
+    margin-left: 10%;
+    align-self: center;
+    cursor: pointer;
+    height: 120px;
+    width: 120px;
+}
+.opened {
+    margin-left: 10%;
+    align-self: center;
+    cursor: pointer;
+    transform: rotate(90deg);
+    height: 120px;
+    width: 120px;
+}
+.transition {
+    transition: all 0.3s;
+}
 </style>

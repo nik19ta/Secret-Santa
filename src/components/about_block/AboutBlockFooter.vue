@@ -10,7 +10,6 @@
                 <img src="../../assets/stickers/sticker2.png" alt="">
                 <img src="../../assets/stickers/stciker3.png" alt="">
                 <img src="../../assets/stickers/sticker4.png" alt="">
-                <img src="../../assets/stickers/sticker5.png" alt="">
             </div>
         </div>
     </div>
@@ -24,18 +23,13 @@
 
 <style scoped>
 p {
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
     width: 400px;
 }
 h2 {
+    font-size: 20px;
     color: #FF645A;
-}
-.footertext {
-    margin-top: -20px;
-}
-.footer {
-    margin-bottom: -55px;
 }
 .footer .wrapper {
     display: flex;
@@ -43,8 +37,18 @@ h2 {
     justify-content: space-between;
     margin-right: auto;
     margin-left:  auto;
-    max-width: 1700px;
+    max-width: 60%;
     padding-right: 10px;
     padding-left:  10px;
+}
+img {
+    height: 100px;
+}
+.stickers {
+    align-self: center;
+}
+.footer {
+    background-color: white;
+    padding-bottom: 20px;
 }
 </style>

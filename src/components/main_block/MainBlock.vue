@@ -1,27 +1,30 @@
 <template>
 <div class="body">
-  <div class="circle"></div>
   <div class="wrapper">
     <div class="main">
-      <p class='titile_h1'>Тайный</p>
-      <p class='titile_h2'>Санта</p>
-      <p class="text">уже принимает участие</p>
-      <div class="all">
-        <div class="component">
-          <p class='count'>340</p>
-          <p class='countText'>всего</p>
-        </div>
-        <div class="component">
-          <p class='count'>3</p>
-          <p class='countText'>дп</p>
-        </div>
-        <div class="component">
-          <p class='count'>45</p>
-          <p class='countText'>из отдела</p>
+      <div class="main_title">
+        <p class="corplife">#corplife</p>
+        <p class='titile_h1'>тайный <br>санта</p>
+        <button v-if='loginStatus == "Error"' @click='toLogin'>Войти</button>
+        <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
+      </div>
+      <div class="members">
+        <p class="now">уже принимает участие</p>
+        <div class="line">
+          <div class="col">
+            <p class="numbers">345</p>
+            <p class="name">всего</p>
+          </div>
+          <div class="col">
+            <p class="numbers">3</p>
+            <p class="name">дп</p>
+          </div>
+          <div class="col">
+            <p class="numbers">45</p>
+            <p class="name">из отдела</p>
+          </div>
         </div>
       </div>
-      <button v-if='loginStatus == "Error"' @click='toLogin'> Войти</button>
-      <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
     </div>
   </div>
 </div>
@@ -49,100 +52,96 @@ a {
 
 .body {
   padding: 10px;
-  height: 1050px;
+  height: 550px;
   background-color: #00A460;
-  background-image: url('../../assets/Group_6.png');
-  background-repeat: space;
-}
-
-.circle {
-  position: absolute;
-  top: -500px;
-  left: -300px;
-  min-width: 1400px;
-  min-height: 1400px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border-right: 21px solid #FF645A;
-  border-bottom: 21px solid #FF645A;
+  background-image: url("../../assets/santas/santa_homepage.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 150px 150px;
 }
 
 .wrapper {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  left: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 70%;
 }
 
 .titile_h1 {
   font-weight: bold;
-  font-size: 60px;
-  color: #FF645A;
-  width: 100%;
-  text-transform: lowercase;
+  font-size: 80px;
+  line-height: 80px;
+  color: white;
+  margin: 0;
+
 }
 
-.titile_h2 {
-  color: #FF645A;
-  font-weight: bold;
-  font-size: 250px;
-  width: 100%;
-  text-transform: lowercase;
-  margin-top: -160px;
-  margin-left: -10px;
+.line {
+  display: flex;
+  justify-content: space-between;
+
 }
 
-.text {
+.now {
   font-size: 20px;
   color: #494949;
-  font-weight: bold;
-  margin-top: -230px;
+  margin: 0;
+  padding: 0;
 }
 
-.all {
-  display: flex;
-  align-items: center;
-  width: 350px;
-  margin-top: -60px;
+.name {
+  margin: 0;
+  font-size: 20px;
+  color: #494949;
+  font-family: CrocWebRegular;
 }
+
+.numbers {
+  margin: 0px;
+  font-size: 50px;
+  color: #00A460;
+}
+
+.members {
+  width: 25%;
+  margin-left: auto;
+  margin-right: 20%;
+  margin-top: 8%;
+}
+
+.corplife {
+  font-size: 24px;
+  padding-top: 15px;
+  font-family: CrocWebLight;
+  color: white;
+}
+
+.main_title {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
 
 .link {
   text-decoration: none;
   color: white;
 }
 
-.component {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 30px;
-}
-
-.count {
-  color: #00A460;
-  font-size: 60px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.countText {
-  font-size: 25px;
-  color: #494949;
-  font-weight: 300;
-  margin-top: -80px;
-  width: 100%;
-}
-
 button {
   outline: none;
   cursor: pointer;
   height: 60px;
-  margin-top: 140px;
-  width: 80%;
+  width: 100%;
   border: none;
   background-color: #FF645A;
   color: white;
+  margin-top: 50px;
   border-radius: 30px;
   font-weight: bold;
   font-size: 24px;

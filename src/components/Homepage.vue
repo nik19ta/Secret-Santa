@@ -1,9 +1,11 @@
 <template>
 <div v-if='!isReg && !IsLogin && !ProfP '>
   <MainBlock :loginStatus='loginStatus' @loginEnd='loginEnd' @toLogin='toLogin' />
-  <AboutBlock />
-  <FormBlock @ToRed='ToRed' />
-  <UsersFeed />
+  <div class="side_wrapper">
+    <AboutBlock />
+    <FormBlock @ToRed='ToRed' />
+    <UsersFeed />
+  </div>
 </div>
 <div v-else-if='isReg || IsLogin && !ProfP'>
   <registration v-if='isReg' @toProf='toProf' />
@@ -99,3 +101,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.side_wrapper {
+  background-image: url("../assets/pattern.svg");
+  padding-left: 10%;
+  padding-right: 10%;
+}
+</style>

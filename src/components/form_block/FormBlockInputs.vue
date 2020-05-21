@@ -1,10 +1,7 @@
 <template>
 <div class="wrapper">
   <form class="form">
-<!--    <label for="name">Имя Фамилия</label>-->
-<!--    <div class="input_block">-->
-<!--      <input id="name" type="text" v-model="name">-->
-<!--    </div>-->
+    <p class="title">Помоги своему Санте – заполни небольшую форму о себе</p>
     <label for="about">Немного о себе</label>
     <div class="input_block">
       <input id="about" type="text" v-model="about" required>
@@ -22,7 +19,7 @@
       <input id="blacklist" type="text" v-model="blacklist" required>
       <div class="info"></div>
     </div>
-    <button @click='registr'>Подать заявку</button>
+    <button @click='registr'>Готов дарить и получать подарки!</button>
   </form>
 </div>
 </template>
@@ -74,11 +71,17 @@ input {
   border-color: #DDDDDD;
   background-color: #FCFCFC;
   height: 50px;
-  width: 700px;
+  width: 550px;
 }
 
 .input_block {
   display: flex;
+}
+
+.title {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #ff645a;
 }
 
 .info {
@@ -103,11 +106,11 @@ button {
   height: 60px;
   margin-top: 30px;
   background-color: #FF645A;
-  width: 725px;
+  width: 85%;
   border: none;
   color: white;
   border-radius: 30px;
-  font-weight: bold;
+  font-family: CrocWebRegular;
   font-size: 24px;
 }
 
@@ -115,11 +118,4 @@ button:hover {
   background-color: #b04740;
 }
 
-.wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1700px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
 </style>
