@@ -847,6 +847,8 @@ export default {
     },
   methods: {
     toProf() {
+      event.preventDefault(); 
+
       this.$emit('toProf', {
         'name': this.name,
         'lastname': this.lastname,

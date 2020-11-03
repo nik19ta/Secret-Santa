@@ -77,7 +77,8 @@ export default {
 
       $.ajax({
         type: "POST",
-        url: "http://91.201.54.125:5000/add",
+        xhrFields: { withCredentials:true },
+        url: "http://194.242.120.163:3001/add",
         crossDomain: true,
         data: {
           'about': this.dataPeple.about,
@@ -90,7 +91,7 @@ export default {
           'password': this.authData.password,
         },
         success: function(data) {
-          console.log(data);
+          console.log('1234567890987654')
           vm.dataProf = data.data;
           vm.ProfP = !vm.ProfP;
           vm.isReg = !vm.isReg;

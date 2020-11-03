@@ -5,8 +5,8 @@
     <div class="about_block">
       <div class="user">
         <img src="../../assets/avatar.png" class="avatar">
-        <p class="name">{{dataProf[5]}}</p>
-        <p class="about">{{dataProf[4]}}</p>
+        <p class="name">{{dataProf.gmail}}</p>
+        <p class="about">{{dataProf.aboutMe}}</p>
       </div>
       <div class="text">
         <p class="name">О колллеге: </p>

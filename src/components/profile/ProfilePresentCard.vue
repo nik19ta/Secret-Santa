@@ -5,7 +5,7 @@
       <div class="present_info">
         <img src="../../assets/gifts/inactive_gift.png" alt="">
         <div class="gift">
-          <p class="gift_name">Скоро тут появится  что-то интересное</p>
+          <p class="gift_name">Скоро тут появится что-то интересное</p>
         </div>
       </div>
       <div class="hr">

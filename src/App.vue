@@ -20,17 +20,11 @@ export default {
     }
   },
   mounted() {
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
-    console.log(1);
     const vm = this;
     $.ajax({
       type: "POST",
-      url: "http://91.201.54.125:5000/auto_login",
+      xhrFields: { withCredentials:true },
+      url: "http://194.242.120.163:3001/auto_login",
       crossDomain: true,
       success: function(data) {
         console.log(data);
@@ -39,17 +33,11 @@ export default {
         }
       }
     });
+    vm.loginStatus = 'Error'
   },
   methods: {
     endLogin(data) {
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
-      console.log(data);
       this.dataProf = data;
-
     }
   }
 };
