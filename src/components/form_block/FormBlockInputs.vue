@@ -71,11 +71,12 @@ input {
   border-color: #DDDDDD;
   background-color: #FCFCFC;
   height: 50px;
-  width: 550px;
+  width: 80%;
 }
 
 .input_block {
   display: flex;
+  width: 100%;
 }
 
 .title {

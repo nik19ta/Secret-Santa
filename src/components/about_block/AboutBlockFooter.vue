@@ -37,15 +37,20 @@ h2 {
     justify-content: space-between;
     margin-right: auto;
     margin-left:  auto;
-    max-width: 60%;
+    max-width: 80%;
     padding-right: 10px;
     padding-left:  10px;
+  flex-wrap: wrap;
 }
 img {
     height: 100px;
 }
 .stickers {
     align-self: center;
+
+}
+.footertext, .stickers{
+  margin-top: 10px;
 }
 .footer {
     background-color: white;

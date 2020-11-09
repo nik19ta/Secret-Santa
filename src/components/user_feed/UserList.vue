@@ -38,8 +38,9 @@
 .list {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-bottom: 30px;
+  padding-top: 10px;
 }
 .list div {
     height: 300px;
@@ -61,5 +62,8 @@
 }
 .about {
     font-family: CrocWebLight;
+}
+.user1, .user2,.user3,.user4,.user5 {
+  margin: 10px;
 }
 </style>

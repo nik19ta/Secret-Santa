@@ -1,27 +1,29 @@
 <template>
 <div class="body">
-  <div class="wrapper">
-    <div class="main">
-      <div class="main_title">
-        <p class="corplife">#corplife</p>
-        <p class='titile_h1'>тайный <br>санта</p>
-        <button v-if='loginStatus == "Error"' @click='toLogin'>Войти</button>
-        <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
-      </div>
-      <div class="members">
-        <p class="now">уже принимает участие</p>
-        <div class="line">
-          <div class="col">
-            <p class="numbers">345</p>
-            <p class="name">всего</p>
-          </div>
-          <div class="col">
-            <p class="numbers">3</p>
-            <p class="name">дп</p>
-          </div>
-          <div class="col">
-            <p class="numbers">45</p>
-            <p class="name">из отдела</p>
+  <div class="header_main" >
+    <div class="wrapper">
+      <div class="main">
+        <div class="main_title">
+          <p class="corplife">#corplife</p>
+          <p class='titile_h1'>тайный <br>санта</p>
+          <button v-if='loginStatus == "Error"' @click='toLogin'>Войти</button>
+          <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
+        </div>
+        <div class="members">
+          <p class="now">уже принимает участие</p>
+          <div class="line">
+            <div class="col">
+              <p class="numbers">345</p>
+              <p class="name">всего</p>
+            </div>
+            <div class="col">
+              <p class="numbers">3</p>
+              <p class="name">дп</p>
+            </div>
+            <div class="col">
+              <p class="numbers">45</p>
+              <p class="name">из отдела</p>
+            </div>
           </div>
         </div>
       </div>
@@ -51,14 +53,25 @@ a {
 }
 
 .body {
-  padding: 10px;
+  /*padding: 10px;*/
+  width: 100%;
   height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../assets/pattern.svg");
+
+}
+.header_main{
+  width: 80%;
+  height: 100%;
   background-color: #00A460;
   background-image: url("../../assets/santas/santa_homepage.svg");
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 150px 150px;
+  position: relative;
 }
 
 .wrapper {
@@ -103,10 +116,13 @@ a {
 }
 
 .members {
-  width: 25%;
-  margin-left: auto;
-  margin-right: 20%;
-  margin-top: 8%;
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  right: 350px;
+  /*margin-left: auto;*/
+  /*margin-right: 200px;*/
+  /*margin-top: 8%;*/
 }
 
 .corplife {
@@ -150,4 +166,52 @@ button {
 button:hover {
   background-color: #b04740;
 }
+
+@media screen and (max-width: 1800px) {
+  .header_main{
+    width: 100%;
+  }
+  .members {
+    right: 350px;
+  }
+}
+@media screen and (max-width: 1750px) {
+  .members {
+    right: 350px;
+  }
+}
+@media screen and (max-width: 1680px) {
+  .members {
+    right: 250px;
+  }
+}
+@media screen and (max-width: 1350px) {
+  .members {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 1239px) {
+  .members {
+    right: 50px;
+  }
+}
+
+
+
+
+/*@media screen and (max-width: 1580px) {*/
+/*  .members {*/
+/*    margin-right: 150px;*/
+/*  }*/
+/*}*/
+/*@media screen and (max-width: 1485px) {*/
+/*  .members {*/
+/*    margin-right: 100px;*/
+/*  }*/
+/*}*/
+/*@media screen and (max-width: 1410px) {*/
+/*  .members {*/
+/*    margin-right: 00px;*/
+/*  }*/
+/*}*/
 </style>

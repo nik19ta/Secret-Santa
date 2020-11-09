@@ -39,7 +39,7 @@ h1 {
   flex-direction: column;
   margin-right: auto;
   margin-left: auto;
-  max-width: 85%;
+  max-width: 100%;
   padding-right: 10px;
   padding-left: 10px;
 }

@@ -52,50 +52,53 @@
 
 <style scoped>
 .body {
-    background-color: white;
-    justify-content: space-between;
-    padding-top: 90px;
-    height: 430px;
-    width: 100%;
-    color: #494949;
+  background-color: white;
+  justify-content: space-between;
+  padding-top: 90px;
+  /*height: 430px;*/
+  width: 100%;
+  color: #494949;
 }
 .redline {
-    height: 40px;
-    background-color: #FF645A;
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+  height: 40px;
+  background-color: #FF645A;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
 }
 .steps {
-    display: flex;
-    justify-content: space-between;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 p {
-    font-size: 15px;
-    text-align: left;
+  font-size: 15px;
+  text-align: left;
 }
 .ps {
-    font-size: 11px;
-    color: #6B6B6B;
+  font-size: 11px;
+  color: #6B6B6B;
 }
 .title {
-    color: #00A460;
+  color: #00A460;
 }
 .text {
-    padding: 10px;
-    width: 260px;
-    border-radius: 28px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 260px;
+  border-radius: 28px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
 }
 .step1,
 .step2,
 .step3,
 .step4{
-    text-align: center;
+  text-align: center;
+  margin: 20px;
 }
-.wrapper {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 85%;
-    padding-right: 10px;
-    padding-left: 10px;
-}
+/*.wrapper {*/
+/*  margin-right: auto;*/
+/*  margin-left: auto;*/
+/*  max-width: 85%;*/
+/*  padding-right: 10px;*/
+/*  padding-left: 10px;*/
+/*}*/
 </style>

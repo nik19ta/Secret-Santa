@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style scoped>
+
+* {
+  box-sizing: border-box;
+}
 .body {
   height: 100%;
   width: 100%;
@@ -62,34 +66,29 @@ export default {
   background-color: #00A460;
   background-image: url("../../assets/bg_icons.png");
   background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   margin-right: auto;
   margin-left: auto;
-  max-width: 50%;
+  width: 90%;
+  /*background: #b04740;*/
 }
 .reg {
-  position: absolute;
-  padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
-  width: 30%;
+  width: 440px;
   border-radius: 40px;
   background-color: white;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
