@@ -25,38 +25,71 @@
 </script>
 
 <style scoped>
-.header {
-    padding-top: 40px;
-    background-color: white;
-}
-h2 {
-    color: #00A460;
-    font-size: 40px;
-    line-height: 32px;
-}
-.wrapper {
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 85%;
-}
-
-.closed {
-    margin-left: 10%;
-    align-self: center;
-    cursor: pointer;
-    height: 120px;
-    width: 120px;
-}
-.opened {
-    margin-left: 10%;
-    align-self: center;
-    cursor: pointer;
-    transform: rotate(90deg);
-    height: 120px;
-    width: 120px;
-}
-.transition {
-    transition: all 0.3s;
-}
+    .header {
+        padding-top: 40px;
+        background-color: white;
+    }
+    h2 {
+        color: #00A460;
+        font-size: 40px;
+        line-height: 32px;
+    }
+    .wrapper {
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 85%;
+    }
+    .closed {
+        margin-left: 10%;
+        align-self: center;
+        cursor: pointer;
+        height: 120px;
+        width: 120px;
+    }
+    .opened {
+        margin-left: 10%;
+        align-self: center;
+        cursor: pointer;
+        transform: rotate(90deg);
+        height: 120px;
+        width: 120px;
+    }
+    .transition {
+        transition: all 0.3s;
+    }
+    @media screen and (max-width: 1665px) {
+        .closed {
+            margin-left: 10%;
+            align-self: center;
+            cursor: pointer;
+            height: 100px;
+            width: 100px;
+        }
+        .opened {
+            margin-left: 10%;
+            align-self: center;
+            cursor: pointer;
+            transform: rotate(90deg);
+            height: 100px;
+            width: 100px;
+        }
+    }
+    @media screen and (max-width: 1430px) {
+        .closed {
+            margin-left: 10%;
+            align-self: center;
+            cursor: pointer;
+            height: 80px;
+            width: 80px;
+        }
+        .opened {
+            margin-left: 10%;
+            align-self: center;
+            cursor: pointer;
+            transform: rotate(90deg);
+            height: 80px;
+            width: 80px;
+        }
+    }
 </style>

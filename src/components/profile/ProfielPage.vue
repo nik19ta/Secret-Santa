@@ -43,28 +43,26 @@ export default {
 </script>
 
 <style scoped>
-.body {
-  padding-top: 40px;
-  min-height: 100vh;
-  background-color: #00A460;
-  padding-bottom: 40px;
-}
-
-.cards {
-  display: flex;
-  justify-content: space-between;
-}
-
-button {
-  position: absolute;
-  top: 10px;
-  right: 40px;
-  padding: 15px;
-  background: #FF645A;
-  border: 0;
-  font-size: 20px;
-  border-radius: 15px;
-  color: #fff;
-  cursor: pointer;
-}
+  .body {
+    padding-top: 40px;
+    min-height: 100vh;
+    background-color: #00A460;
+    padding-bottom: 40px;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    padding: 15px;
+    background: #FF645A;
+    border: 0;
+    font-size: 20px;
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+  }
 </style>

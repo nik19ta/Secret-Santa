@@ -18,20 +18,26 @@ import UserList from './UserList'
 </script>
 
 <style scoped>
-.body {
-    padding-top: 10px;
-    background-color: #00A460;
-}
-.wrapper {
-    margin-right: auto;
-    margin-left:  auto;
-    max-width: 85%;
-    padding-right: 10px;
-    padding-left:  10px;
-}
-.title  {
-    font-size: 40px;
-    line-height: 32px;
-    color: white;
-}
+    .body {
+        padding-top: 10px;
+        background-color: #00A460;
+    }
+    .wrapper {
+        margin-right: auto;
+        margin-left:  auto;
+        max-width: 85%;
+        padding-right: 10px;
+        padding-left:  10px;
+    }
+    .title  {
+        font-size: 40px;
+        line-height: 32px;
+        color: white;
+    }
+    @media screen and (max-width: 1430px) {
+        .title {
+            font-size: 40px;
+            line-height: 32px;
+        }
+    }
 </style>

@@ -23,24 +23,27 @@ export default {
 </script>
 
 <style scoped>
-.body {
-  background-color: white;
-  padding-top: 40px;
-  padding-bottom: 50px;
-}
-
-h1 {
-  font-size: 64px;
-  color: #ff645a;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-}
+  .body {
+    background-color: white;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  h1 {
+    font-size: 64px;
+    color: #ff645a;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 85%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  @media screen and (max-width: 1430px) {
+    .body {
+      padding-top: 20px;
+    }
+  }
 </style>
