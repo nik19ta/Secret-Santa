@@ -12,13 +12,13 @@
     <input id="blacklist" type="text" v-model="blacklist" required>
 
     <label for="phoneNumber">Твой номер телефона</label>
-    <input id="phoneNumber" type="text" v-model="blacklist" required>
+    <input id="phoneNumber" type="text" v-model="phoneNumber" required>
 
     <label for="adress">Адрес доставки</label>
-    <input id="adress" type="text" v-model="blacklist" required>
+    <input id="adress" type="text" v-model="adress" required>
 
     <label for="deliveryDate">Удобные даты доставки</label>
-    <input id="deliveryDate" type="text" v-model="blacklist" required>
+    <input id="deliveryDate" type="text" v-model="deliveryDate" required>
 
     <button @click='registr'>Готов дарить и получать подарки!</button>
   </form>

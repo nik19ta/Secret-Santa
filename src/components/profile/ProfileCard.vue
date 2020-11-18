@@ -17,6 +17,15 @@
         <p class="about">{{dataProf[2]}}</p>
       </div>
     </div>
+    <div class="info">
+      <div class="adress">
+        <p class="name">Адресс доставки: </p> <p class="about">фывфыв</p>
+      </div>
+      <div class="date">
+        <p class="name">Удобные даты и время доставки: </p> <p class="about">фывфыв</p>
+      </div>
+      <button>Скачать ваучер на доставку</button>
+    </div>
     <div class="present_info">
       <hr>
       <form class="form">
@@ -113,6 +122,18 @@ export default {
   .title {
     font-size: 42px;
     line-height: 32px;
+  }
+  .adress {
+    display: flex;
+    flex-direction: row;
+  }
+  .date {
+    display: flex;
+    flex-direction: row;
+  }
+  .info button {
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
   label {
     color: #6B6B6B;
@@ -342,5 +363,8 @@ export default {
       border-radius: 30px;
       padding-left: 10px;
     }
+  }
+  @media screen and (max-width: 1430px) {
+
   }
 </style>
