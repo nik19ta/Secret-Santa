@@ -164,5 +164,67 @@
     margin-left: auto;
     max-width: 85%;
   }
-
+  @media screen and (max-width: 1665px) {
+    .card {
+      margin-top: 40px;
+      margin-left: 40px;
+      min-height: 80%;
+      max-width: 20%;
+      background-color: white;
+      border-radius: 40px;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      color: #6B6B6B;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      padding-top: 20px;
+      font-size: 15px;
+    }
+    .present_info {
+      display: flex;
+      flex-direction: row;
+      height: 300px;
+    }
+    .gift_name {
+      font-size: 26px ;
+      color: #6B6B6B;
+    }
+    img {
+      height: 134px;
+      width: 134px;
+    }
+    .photos img {
+      cursor: pointer;
+      height: 134px;
+      width: 134px;
+    }
+    .add_photo {
+      cursor: pointer;
+      height: 40px;
+      margin-top: 15px;
+      width: 30%;
+      border-style: solid;
+      background-color: #FCFCFC;
+      color: #6B6B6B;
+      border-radius: 30px;
+      border-color: #DDDDDD;
+      font-family: CrocWebRegular;
+      font-size: 15px;
+    }
+    .send {
+      cursor: pointer;
+      align-self: flex-end;
+      height: 40px;
+      margin-top: 30px;
+      border: none;
+      width: 40%;
+      background-color: #ff645a;
+      color: white;
+      border-radius: 30px;
+      border-color: #DDDDDD;
+      font-family: CrocWebRegular;
+      font-size: 15px;
+    }
+  }
 </style>
