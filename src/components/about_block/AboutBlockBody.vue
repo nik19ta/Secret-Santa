@@ -36,6 +36,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="discount">
+                    <p class="discountText">За участие в Тайном Санте ты получишь скидку в Боброшопе.
+                        Как только ты отправишь подарок, станет доступной беспроигрышная лотерея: участвуй и получай свою скидку от 10% до 60% на любой лот в декабрьской Бобромании и радуй себя новогодними покупками за бобры!
+                    </p>
+                </div>
             </div>
         </div>
         <div class="redline"></div>
@@ -51,7 +56,6 @@
         background-color: white;
         justify-content: space-between;
         padding-top: 90px;
-        padding-bottom: 50px;
         width: 100%;
         color: #494949;
     }
@@ -73,6 +77,19 @@
     p {
         font-size: 15px;
         text-align: left;
+    }
+    .discount {
+        margin-top: 40px;
+        padding: 5px 20px;
+        width: 450px;
+        background: #FF645A;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    .discountText {
+        font-size: 18px;
+        font-family: CrocWebBold;
+        color: white;
     }
     .ps {
         font-size: 11px;
@@ -110,6 +127,9 @@
             border-radius: 28px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
         }
+        .discountText {
+            font-size: 16px;
+        }
     }
     @media screen and (max-width: 1430px) {
         .body {
@@ -131,6 +151,10 @@
         .ps {
             font-size: 10px;
             color: #6B6B6B;
+        }
+        .discount {
+            padding: 10px;
+            width: 400px;
         }
     }
 </style>
