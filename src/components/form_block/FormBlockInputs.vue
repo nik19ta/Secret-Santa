@@ -4,45 +4,45 @@
     <p class="title">Помоги своему Санте – заполни небольшую форму о себе</p>
     <label for="about">Немного о себе</label>
     <input id="about" type="text" v-model="about" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Здесь ты можешь рассказать о том, что  тебе интересно, своих увлечениях и хобби.</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Здесь ты можешь рассказать о том, что  тебе интересно, своих увлечениях и хобби.</p>-->
+<!--    </div>-->
 
     <label for="wishlist">Список желаний</label>
     <input id="wishlist" type="text" v-model="wishlist" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Напиши, что тебе хотелось бы получить,  или обозначь сферу, подарок из которой  тебе точно пригодится. Список поможет  Санте подобрать для тебя что-то актуальное.  Но креативный подход никто не отменял ;)</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Напиши, что тебе хотелось бы получить,  или обозначь сферу, подарок из которой  тебе точно пригодится. Список поможет  Санте подобрать для тебя что-то актуальное.  Но креативный подход никто не отменял ;)</p>-->
+<!--    </div>-->
 
     <label for="blacklist">То, что совсем не нравится</label>
     <input id="blacklist" type="text" v-model="blacklist" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Здесь все понятно – список того, что ты  точно не хотел бы получить. Возможно, у тебя на что-то аллергия, или ты не переносишь красный цвет. Лучше указать все ограничения, чтобы избежать неприятных сюрпризов ;)</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Здесь все понятно – список того, что ты  точно не хотел бы получить. Возможно, у тебя на что-то аллергия, или ты не переносишь красный цвет. Лучше указать все ограничения, чтобы избежать неприятных сюрпризов ;)</p>-->
+<!--    </div>-->
 
     <label for="phoneNumber">Твой номер телефона</label>
     <input id="phoneNumber" type="text" v-model="phoneNumber" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Напиши помер телефона, по которому с тобой сможет связаться курьер при доставке  подарка от Тайного Санты.</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Напиши помер телефона, по которому с тобой сможет связаться курьер при доставке  подарка от Тайного Санты.</p>-->
+<!--    </div>-->
 
     <label for="adress">Адрес доставки</label>
     <input id="adress" type="text" v-model="adress" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Напиши адрес, на который курьер сможет доставить тебе подарок от Тайного Санты.</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Напиши адрес, на который курьер сможет доставить тебе подарок от Тайного Санты.</p>-->
+<!--    </div>-->
 
     <label for="deliveryDate">Удобные даты доставки</label>
     <input id="deliveryDate" type="text" v-model="deliveryDate" required>
-    <img class="info" src="../../assets/green_info.png" alt="info">
-    <div class="text">
-      <p class="about">Отметь даты, когда тебе будет удобно получить подарок от Тайного Санты.</p>
-    </div>
+<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
+<!--    <div class="text">-->
+<!--      <p class="about">Отметь даты, когда тебе будет удобно получить подарок от Тайного Санты.</p>-->
+<!--    </div>-->
 
     <button @click='registr'>Готов дарить и получать подарки!</button>
   </form>
