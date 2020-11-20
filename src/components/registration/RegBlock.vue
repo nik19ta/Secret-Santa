@@ -7,18 +7,6 @@
         <p class="corplife">#corplife</p>
       </div>
 
-      <label for="name">Имя</label>
-      <div class="input_block">
-        <input v-model="name" id="name" type="text" required>
-        <div class="info" data-title="hello"></div>
-      </div>
-
-      <label for="lastname">Фамилия</label>
-      <div class="input_block">
-        <input v-model="lastname" id="lastname" type="text" required>
-        <div class="info" data-title="hello"></div>
-      </div>
-
       <label for="email">Email</label>
       <div class="input_block">
         <input v-model="email" id="email" type="email" required>
@@ -31,13 +19,13 @@
         <div class="info" data-title="hello"></div>
       </div>
       
-      <select name="Департаментs" v-model="Департаментs" required>
-        <option v-for='item in data' :key='item' :value="item">{{item}}</option>
-      </select>
+<!--      <select name="Департаментs" v-model="Департаментs" required>-->
+<!--        <option v-for='item in data' :key='item' :value="item">{{item}}</option>-->
+<!--      </select>-->
 
-      <select v-if='Департаментs != ""' name="branches" v-model="branches">
-        <option v-for='item in branch' :key='item.branch' :value="item.branch" :disabled="item.Департамент != Департаментs ? '' : disabled"> <span>{{item.branch}}</span></option>
-      </select>
+<!--      <select v-if='Департаментs != ""' name="branches" v-model="branches">-->
+<!--        <option v-for='item in branch' :key='item.branch' :value="item.branch" :disabled="item.Департамент != Департаментs ? '' : disabled"> <span>{{item.branch}}</span></option>-->
+<!--      </select>-->
 
       <router-link class="link" to="/profile"><button @click='toProf'>Регистрация</button></router-link>
     </div>
@@ -50,8 +38,6 @@ export default {
   name: "RegBlock",
   data() {
       return {
-        name: '',
-        lastname: '',
         email: '',
         password: '',
         departments: '',
@@ -850,8 +836,6 @@ export default {
       event.preventDefault(); 
 
       this.$emit('toProf', {
-        'name': this.name,
-        'lastname': this.lastname,
         'email': this.email,
         'password': this.password,
         'branches': this.branches,
@@ -883,7 +867,7 @@ export default {
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    width: 60%;
+    width: 90%;
   }
   .reg {
     padding-bottom: 50px;
@@ -895,7 +879,7 @@ export default {
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 700px;
+    width: 440px;
     border-radius: 40px;
     background-color: white;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);

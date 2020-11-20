@@ -19,10 +19,12 @@
     </div>
     <div class="info">
       <div class="adress">
-        <p class="name">Адресс доставки: </p> <p class="about">фывфыв</p>
+        <p class="name">Адресс доставки: </p>
+        <p class="about">фывфыв</p>
       </div>
       <div class="date">
-        <p class="name">Удобные даты и время доставки: </p> <p class="about">фывфыв</p>
+        <p class="name">Удобные даты и время доставки: </p>
+        <p class="about">фывфыв</p>
       </div>
       <button>Скачать ваучер на доставку</button>
     </div>
@@ -82,6 +84,8 @@
         </div>
       </div>
     </div>
+    <p class="name">Иван Иванов уже получил твой подарок и написал тебе: </p>
+    <div class="feedback"><p class="feedbackText">asdasd</p></div>
   </div>
 </div>
 </template>
@@ -125,15 +129,32 @@ export default {
   }
   .adress {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .date {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .info button {
     margin-top: 10px;
     margin-bottom: 15px;
+  }
+  .feedback {
+    width: 450px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FCFCFC;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #DDDDDD;
+    min-height: 150px;
+    margin-bottom: 20px;
+   }
+  .feedbackText {
+    color: #494949;
+    font-size: 16px;
+    min-height: 40px;
+    margin: 0;
   }
   label {
     color: #6B6B6B;
@@ -243,8 +264,8 @@ export default {
     color: white;
   }
   .avatar {
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     background-color: #A2A19C;
     border-radius: 50%;
     margin-bottom: 20px;
@@ -267,11 +288,13 @@ export default {
   }
   .about {
     color: #494949;
-    font-size: 18px;
+    font-size: 16px;
+    min-height: 40px;
   }
   .about_active {
-    font-size: 18px;
+    font-size: 16px;
     color: #00A460;
+    min-height: 40px;
   }
   .wrapper {
     display: flex;
@@ -365,6 +388,18 @@ export default {
     }
   }
   @media screen and (max-width: 1430px) {
-
+    .feedbackText {
+      font-size: 14px;
+    }
+    .about {
+      color: #494949;
+      font-size: 12px;
+      min-height: 55px;
+    }
+    .about_active {
+      font-size: 12px;
+      color: #00A460;
+      min-height: 55px;
+    }
   }
 </style>
