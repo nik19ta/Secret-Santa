@@ -3,7 +3,7 @@
     <div class="wrapper">
       <p class="title">мои <br>подарки</p>
       <div class="present_info">
-        <img src="../../assets/gifts/inactive_gift.png" alt="">
+        <img src="../../assets/gifts/inactive_gift.png" alt="" class="imgPresent">
         <div class="gift">
           <p class="gift_name">Скоро тут появится что-то интересное</p>
         </div>
@@ -26,6 +26,37 @@
         <img src="../../assets/add_photo.png" alt="">
       </div>
       <button class="send">Отправить Тайному Санте</button>
+      <div class="status">
+        <div class="first_step">
+          <!-- Картинка меняется на ../../assets/profile_vectors/active/1step.svg, когда нажимается кнопка "Подарок готов" в профиле -->
+          <img src="../../assets/profile_vectors/inactive/1step.svg" alt="" class="step_img">
+          <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на circle_active) -->
+          <div class="circle_inactive"></div>
+          <p class="about">Тайный Санта готовит тебе подарок</p>
+        </div>
+
+        <!-- Полоска загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на status_hr_active) -->
+        <div class="status_hr_inactive"></div>
+
+        <div class="second_step">
+          <!-- Картинка меняется на ../../assets/profile_vectors/active/2step.svg, когда нажимается кнопка "Отправить подарок" в админ панели -->
+          <img src="../../assets/profile_vectors/inactive/2step.svg" alt="" class="step_img">
+          <!-- Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
+          <div class="circle_inactive"></div>
+          <p class="about">Тебе уже отправили подарок от Тайного Санты</p>
+        </div>
+
+        <!-- Полоска загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
+        <div class="status_hr_inactive"></div>
+
+        <div class="third_step">
+          <!-- Картинка меняется на ../../assets/profile_vectors/active/3step.svg, когда нажимается кнопка "Подарок получен" в админ панели -->
+          <img src="../../assets/profile_vectors/inactive/3step.svg" alt="" class="step_img">
+          <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок получен" в админ панели -->
+          <div class="circle_inactive"></div>
+          <p class="about">Ты получил свой подарок!</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -46,6 +77,7 @@
     background-color: white;
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    max-height: 1370px;
   }
   p {
     font-size: 64px;
@@ -54,6 +86,63 @@
   .title {
     font-size: 42px;
     line-height: 32px;
+  }
+  .first_step, .second_step, .third_step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+  }
+  .step_img {
+    margin-bottom: 15px;
+  }
+  .status_hr_inactive {
+    align-self: center;
+    height: 2px;
+    width: 20%;
+    background-color: #6B6B6B;
+    margin-bottom: 70px;
+  }
+  .status_hr_active {
+    align-self: center;
+    height: 2px;
+    width: 20%;
+    background-color: #00A460;
+    margin-bottom: 70px;
+  }
+  .status {
+    margin-top: 40px;
+    display: flex;
+  }
+  .status .about, .about_active{
+    text-align: center;
+  }
+  .circle_inactive {
+    min-height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background-color: white;
+    border-style: solid;
+    border-color: #6B6B6B;
+  }
+  .circle_active {
+    min-height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background-color: white;
+    border-style: solid;
+    border-color: #00A460;
+  }
+  .about {
+    color: #494949;
+    font-size: 16px;
+    min-height: 120px;
+  }
+  .about_active {
+    font-size: 16px;
+    color: #00A460;
+    min-height: 120px;
   }
   .present_info {
     display: flex;
@@ -64,7 +153,7 @@
     font-size: 32px ;
     color: #6B6B6B;
   }
-  img {
+  .imgPresent {
     height: 174px;
     width: 174px;
   }
@@ -141,6 +230,8 @@
     font-size: 16px;
     background-color: #FCFCFC;
     border-radius: 15px;
+    border-style: solid;
+    border-color: #DDDDDD;
     height: 150px;
     resize: none;
     outline: none;
@@ -171,6 +262,7 @@
       background-color: white;
       border-radius: 40px;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+      max-height: 1300px;
     }
     label {
       color: #6B6B6B;
@@ -188,7 +280,7 @@
       font-size: 26px ;
       color: #6B6B6B;
     }
-    img {
+    .imgPresent {
       height: 134px;
       width: 134px;
     }
@@ -224,12 +316,38 @@
       font-family: CrocWebRegular;
       font-size: 15px;
     }
+    .about {
+      font-size: 15px;
+    }
+    .about_active {
+      font-size: 15px;
+    }
   }
   @media screen and (max-width: 1430px) {
+    .card {
+      max-height: 1250px;
+    }
+
     .photos img {
       cursor: pointer;
       height: 112px;
       width: 112px;
+    }
+    .about {
+      color: #494949;
+      font-size: 12px;
+      min-height: 55px;
+    }
+    .about_active {
+      font-size: 12px;
+      color: #00A460;
+      min-height: 55px;
+    }
+    .status_hr_inactive {
+      margin-bottom: 0;
+    }
+    .status_hr_active {
+      margin-bottom: 0;
     }
   }
 </style>

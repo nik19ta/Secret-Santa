@@ -23,13 +23,6 @@
 <!--      <p class="about">Здесь все понятно – список того, что ты  точно не хотел бы получить. Возможно, у тебя на что-то аллергия, или ты не переносишь красный цвет. Лучше указать все ограничения, чтобы избежать неприятных сюрпризов ;)</p>-->
 <!--    </div>-->
 
-    <label for="phoneNumber">Твой номер телефона</label>
-    <input id="phoneNumber" type="text" v-model="phoneNumber" required>
-<!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
-<!--    <div class="text">-->
-<!--      <p class="about">Напиши помер телефона, по которому с тобой сможет связаться курьер при доставке  подарка от Тайного Санты.</p>-->
-<!--    </div>-->
-
     <label for="adress">Адрес доставки</label>
     <input id="adress" type="text" v-model="adress" required>
 <!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
@@ -38,7 +31,7 @@
 <!--    </div>-->
 
     <label for="deliveryDate">Удобные даты доставки</label>
-    <input id="deliveryDate" type="text" v-model="deliveryDate" required>
+    <input id="deliveryDate" type="date" name="calendar" value="2020-12-10" min="2020-12-10" max="2020-12-25" v-model="deliveryDate" required>
 <!--    <img class="info" src="../../assets/green_info.png" alt="info">-->
 <!--    <div class="text">-->
 <!--      <p class="about">Отметь даты, когда тебе будет удобно получить подарок от Тайного Санты.</p>-->
