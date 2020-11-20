@@ -104,9 +104,6 @@
   button {
     outline: none;
   }
-  textarea {
-    outline: none;
-  }
   .send {
     cursor: pointer;
     align-self: flex-end;
@@ -146,6 +143,7 @@
     border-radius: 15px;
     height: 150px;
     resize: none;
+    outline: none;
   }
   input {
     padding-left: 10px;
@@ -225,6 +223,13 @@
       border-color: #DDDDDD;
       font-family: CrocWebRegular;
       font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 1430px) {
+    .photos img {
+      cursor: pointer;
+      height: 112px;
+      width: 112px;
     }
   }
 </style>

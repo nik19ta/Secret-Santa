@@ -3,7 +3,7 @@
   <div class="reg">
     <div class="wrapper">
       <div class="header">
-        <h1>тайный <br>санта</h1>
+        <h1>тайный санта</h1>
         <p class="corplife">#corplife</p>
       </div>
       <input v-model="email" type="email" placeholder="Email">
@@ -64,7 +64,6 @@ export default {
   position: absolute;
   top: 0;
   background-color: #00A460;
-  background-image: url("../../assets/bg_icons.png");
   background-size: auto;
   display: flex;
   justify-content: center;

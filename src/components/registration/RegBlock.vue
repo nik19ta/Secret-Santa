@@ -3,7 +3,7 @@
   <form class="reg">
     <div class="wrapper">
       <div class="header">
-        <h1>тайный <br>санта</h1>
+        <h1>тайный санта</h1>
         <p class="corplife">#corplife</p>
       </div>
 
@@ -863,80 +863,95 @@ export default {
 </script>
 
 <style scoped>
+
+  * {
+    box-sizing: border-box;
+  }
   .body {
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     background-color: #00A460;
-    background-image: url("../../assets/bg_icons.png");
-    background-size: contain;
+    background-size: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .wrapper {
     display: flex;
     flex-direction: column;
     margin-right: auto;
     margin-left: auto;
-    max-width: 60%;
+    width: 60%;
   }
   .reg {
-    position: absolute;
-    padding: 50px 30px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 30%;
+    width: 700px;
     border-radius: 40px;
     background-color: white;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
   }
   label {
     color: #6B6B6B;
     padding-left: 20px;
     padding-bottom: 5px;
-    padding-top: 20px;
+    padding-top: 5px;
     font-size: 18px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  h1 {
+    font-size: 36px;
+    color: #ff645a;
+  }
+  .header p {
+    font-size: 24px;
+    padding-top: 15px;
+    color: #505050;
   }
   input {
     outline: none;
-    font-size: 20px;
-    border-radius: 30px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #FCFCFC;
-    height: 45px;
-    width: 98%;
-    padding: 1%;
-  }
-  select {
-    outline: none;
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 30px;
     font-size: 20px;
     border-radius: 30px;
     border-style: solid;
     border-color: #DDDDDD;
-    border-width: 2px;
     background-color: #FCFCFC;
     height: 45px;
     width: 100%;
   }
+
+  select {
+      outline: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 30px;
+      font-size: 20px;
+      border-radius: 30px;
+      border-style: solid;
+      border-color: #DDDDDD;
+      border-width: 2px;
+      background-color: #FCFCFC;
+      height: 45px;
+      width: 100%;
+    }
+
   button {
     outline: none;
     cursor: pointer;
-    height: 60px;
+    height: 50px;
     width: 100%;
     margin-top: 30px;
     background-color: #FF645A;
@@ -946,92 +961,54 @@ export default {
     font-weight: bold;
     font-size: 24px;
   }
-  h1 {
-    font-size: 36px;
-    line-height: 36px;
-    color: #ff645a;
-  }
-  .header p {
-    font-size: 24px;
-    padding-top: 15px;
-    color: #505050;
-  }
+
   button:hover {
     background-color: #b04740;
   }
+
   @media screen and (max-width: 1665px) {
+    .reg {
+      padding-bottom: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      width: 600px;
+    }
     label {
       padding-left: 20px;
       padding-bottom: 5px;
-      padding-top: 20px;
-      font-size: 15px;
-    }
-    input {
-      font-size: 20px;
-      height: 35px;
-      width: 98%;
-      padding: 1%;
-    }
-    select {
-      padding-left: 10px;
-      padding-right: 10px;
-      margin-top: 30px;
-      font-size: 20px;
-      height: 35px;
-      width: 100%;
-    }
-    button {
-      height: 40px;
-      width: 100%;
-      margin-top: 30px;
-      font-size: 20px;
+      padding-top: 5px;
+      font-size: 14px;
     }
     h1 {
-      font-size: 36px;
-      line-height: 36px;
+      font-size: 28px;
+      color: #ff645a;
     }
     .header p {
-      font-size: 24px;
-      padding-top: 15px;
+      font-size: 18px;
+      padding-top: 10px;
+      color: #505050;
     }
-    @media screen and (max-width: 1430px){
-      .reg {
-        padding: 10px 10px;
-      }
-      label {
-        padding-left: 20px;
-        padding-bottom: 5px;
-        padding-top: 20px;
-        font-size: 12px;
-      }
-      input {
-        font-size: 16px;
-        height: 35px;
-        width: 98%;
-        padding: 1%;
-      }
-      select {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-top: 20px;
-        font-size: 16px;
-        height: 35px;
-        width: 100%;
-      }
-      button {
-        height: 40px;
-        width: 100%;
-        margin-top: 20px;
-        font-size: 16px;
-      }
-      h1 {
-        font-size: 28px;
-        line-height: 28px;
-      }
-      .header p {
-        font-size: 20px;
-        padding-top: 15px;
-      }
+    input {
+      font-size: 16px;
+      height: 35px;
+    }
+
+    select {
+      margin-top: 30px;
+      font-size: 16px;
+      height: 35px;
+    }
+
+    button {
+      height: 40px;
+      margin-top: 30px;
+      font-size: 20px;
     }
   }
 </style>
