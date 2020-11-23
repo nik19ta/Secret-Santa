@@ -8,7 +8,7 @@
       </div>
       <input v-model="email" type="email" placeholder="Email">
       <input v-model="password" type="password" placeholder="Пароль">
-      <router-link class="link" to="/profile"><button @click='toProf'>Вход</button></router-link>
+      <a class="link"><button @click='toProf'>Вход</button></a>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ export default {
       const vm = this;
       $.ajax({
         type: "POST",
-        url: "http://194.242.120.163:3001/login",
+        url: "http://localhost:3650/login",
         crossDomain: true,
         data: {
           'password': vm.password,

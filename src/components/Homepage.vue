@@ -75,16 +75,18 @@ export default {
     Auth() {
       const vm = this;
 
+      console.log(vm.dataPeple);
+
       $.ajax({
         type: "POST",
         xhrFields: { withCredentials:true },
-        url: "http://194.242.120.163:3001/add",
+        url: "http://localhost:3650/add",
         crossDomain: true,
         data: {
           'about': this.dataPeple.about,
           'blacklist': this.dataPeple.blacklist,
           'branches': this.dataPeple.branches,
-          'departments': this.dataPeple.departments,
+          'departments': 'this.dataPeple.departments',
           'name': this.dataPeple.name,
           'wishlist': this.dataPeple.wishlist,
           'email': this.authData.email,

@@ -2,7 +2,7 @@
 <div class="body">
   <button type="button" @click='toAdmin' v-if='dataProf[9] == "admin" && isAdminbtn ' name="button">Перейти в админ панель</button>
   <div class="cards">
-    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' />
+    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend'/>
     <ProfilePresentCard v-if='!isAdmin' />
     <admin v-if='isAdmin' />
   </div>
@@ -28,7 +28,7 @@ export default {
     return {
       isAdmin: false,
       isAdminbtn: true,
-
+      isSend: false
     }
   },
   methods: {

@@ -84,8 +84,8 @@
         </div>
       </div>
     </div>
-    <p class="name">Иван Иванов уже получил твой подарок и написал тебе: </p>
-    <div class="feedback"><p class="feedbackText">asdasd</p></div>
+    <p v-if="isSend" class="name">Иван Иванов уже получил твой подарок и написал тебе: </p>
+    <div v-if="isSend" class="feedback"><p class="feedbackText">asdasd</p></div>
   </div>
 </div>
 </template>
@@ -94,14 +94,10 @@
 export default {
   name: 'ProfileCard',
   props: {
-    dataProf: {}
+    dataProf: {},
+    isSend: { }
   },
   mounted() {
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
   },
   components: {}
 }

@@ -7,21 +7,21 @@
           <p class="corplife">#corplife</p>
           <p class='titile_h1'>тайный <br>санта</p>
           <button v-if='loginStatus == "Error"' @click='toLogin'>Личный кабинет</button>
-          <router-link v-else class="link" to="/profile"><button>Мой профиль {{loginStatus}} </button></router-link>
+          <a v-else class="link" ><button>Мой профиль {{loginStatus}} </button></a>
         </div>
         <div class="members">
           <p class="now">уже принимает участие</p>
           <div class="line">
             <div class="col">
-              <p class="numbers">345</p>
+              <p class="numbers">{{numbers1}}</p>
               <p class="name">всего</p>
             </div>
             <div class="col">
-              <p class="numbers">3</p>
+              <p class="numbers">{{numbers2}}</p>
               <p class="name">дп</p>
             </div>
             <div class="col">
-              <p class="numbers">45</p>
+              <p class="numbers">{{numbers3}}</p>
               <p class="name">из отдела</p>
             </div>
           </div>
@@ -37,6 +37,28 @@ export default {
   name: "MainBlock",
   props: {
     loginStatus: {}
+  },
+  data: function() {
+    return {
+      numbers1: 0,
+      numbers2: 0,
+      numbers3: 0
+    }
+  },
+  mounted: function() {
+    let vm = this;
+    fetch('http://localhost:3650/count/', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "GET",
+        })
+        .then(response => response.text())
+        .then((response) => {
+          // vm.numbers1 = JSON.parse(response).counts;
+        })
+        .catch(err => console.log(err))
   },
   methods: {
     toLogin() {

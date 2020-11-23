@@ -24,7 +24,7 @@ export default {
     $.ajax({
       type: "POST",
       xhrFields: { withCredentials:true },
-      url: "http://194.242.120.163:3001/auto_login",
+      url: "http://localhost:3650/auto_login",
       crossDomain: true,
       success: function(data) {
         console.log(data);

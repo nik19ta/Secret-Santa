@@ -65,7 +65,7 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://194.242.120.163:3001/AllData",
+      url: "http://localhost:3650/AllData",
       success: function(data) {
         console.log(data);
         vm.data = data;

@@ -27,7 +27,7 @@
 <!--        <option v-for='item in branch' :key='item.branch' :value="item.branch" :disabled="item.Департамент != Департаментs ? '' : disabled"> <span>{{item.branch}}</span></option>-->
 <!--      </select>-->
 
-      <router-link class="link" to="/profile"><button @click='toProf'>Регистрация</button></router-link>
+      <a class="link"><button @click='toProf'>Регистрация</button></a>
     </div>
   </form>
 </div>

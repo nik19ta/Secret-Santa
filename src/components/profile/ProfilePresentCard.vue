@@ -25,7 +25,7 @@
         <img src="../../assets/add_photo.png" alt="">
         <img src="../../assets/add_photo.png" alt="">
       </div>
-      <button class="send">Отправить Тайному Санте</button>
+      <button @click="send" class="send">Отправить Тайному Санте</button>
       <div class="status">
         <div class="first_step">
           <!-- Картинка меняется на ../../assets/profile_vectors/active/1step.svg, когда нажимается кнопка "Подарок готов" в профиле -->
@@ -65,6 +65,11 @@
   export default {
     name: 'ProfilePresentCard',
     components: {},
+    methods: {
+      send() {
+        console.log('send');
+      }
+    }
   }
 </script>
 
@@ -225,7 +230,7 @@
     justify-content: space-between;
   }
   textarea {
-    width: 450px;
+    width: 95%;
     padding: 10px;
     font-size: 16px;
     background-color: #FCFCFC;
@@ -235,6 +240,9 @@
     height: 150px;
     resize: none;
     outline: none;
+  }
+  .input_block{
+    width: 100%;
   }
   input {
     padding-left: 10px;
