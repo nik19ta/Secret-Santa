@@ -50,16 +50,31 @@ export default {
       ProfP: false
     }
   },
+  mounted() {
+    fetch('http://localhost:3650/auto_login', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+        })
+        .then(response => response.text())
+        .then((response) => {
+          console.log(JSON.parse(response));
+        })
+        .catch(err => console.log(err))
+  },
   methods: {
     loginEnd(data) {
       // this.dataPr = data;
       this.$emit('endLogin', data)
     },
     login(data) {
+      console.log('-----------');
       console.log(data);
+      console.log('-----------');
       this.dataProf = data;
       this.ProfP = !this.ProfP;
-
     },
     ToRed(data) {
       this.isReg = true
@@ -99,7 +114,12 @@ export default {
         })
         .then(response => response.text())
         .then((response) => {
-          console.log(JSON.parse(response));
+          console.log(JSON.parse(response).data);
+
+          
+          vm.dataProf = true;
+          vm.ProfP = !vm.ProfP;
+          vm.isReg = !vm.isReg;
         })
         .catch(err => console.log(err))
 
