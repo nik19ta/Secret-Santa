@@ -2,35 +2,57 @@
     <div class="list">
         <div class="user1">
             <img src="../../assets/avatar.png" class="avatar">
-            <p class="name">Имя Фамилия</p>
-            <p class="about">Инженер Разработчик</p>
+            <p class="name">{{data[0].name}}</p>
+            <p class="about">{{data[0].Position}}</p>
         </div>
         <div class="user2">
             <img src="../../assets/avatar.png" class="avatar">
-            <p class="name">Имя Фамилия</p>
-            <p class="about">Инженер Разработчик</p>
+            <p class="name">{{data[1].name}}</p>
+            <p class="about">{{data[1].Position}}</p>
         </div>
         <div class="user3">
             <img src="../../assets/avatar.png" class="avatar">
-            <p class="name">Имя Фамилия</p>
-            <p class="about">Инженер Разработчик</p>
+            <p class="name">{{data[2].name}}</p>
+            <p class="about">{{data[2].Position}}</p>
         </div>
         <div class="user4">
             <img src="../../assets/avatar.png" class="avatar">
-            <p class="name">Имя Фамилия</p>
-            <p class="about">Инженер Разработчик</p>
+            <p class="name">{{data[3].name}}</p>
+            <p class="about">{{data[3].Position}}</p>
         </div>
         <div class="user5">
             <img src="../../assets/avatar.png" class="avatar">
-            <p class="name">Имя Фамилия</p>
-            <p class="about">Инженер Разработчик</p>
+            <p class="name">{{data[4].name}}</p>
+            <p class="about">{{data[4].Position}}</p>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "UserList"
+        name: "UserList",
+        data: function() {
+            return {
+                data: []
+            }
+        },
+        mounted() {
+            let vm = this;
+            fetch('http://localhost:3650/get_count_users', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "GET",
+        })
+        .then(response => response.text())
+        .then((response) => {
+        console.log(JSON.parse(response).success);
+        vm.data = JSON.parse(response).success;
+          
+        })
+        .catch(err => console.log(err))
+        }
     }
 </script>
 
