@@ -10,21 +10,21 @@
       </div>
       <div class="text">
         <p class="name">О колллеге: </p>
-        <p class="about">{{dataProf[1]}}</p>
+        <p class="about">Мы пока не подобрали вам пару</p>
         <p class="name">Он точно будет рад:</p>
-        <p class="about">{{dataProf[6]}}</p>
+        <p class="about">Мы пока не подобрали вам пару</p>
         <p class="name">Лучше не дарить:</p>
-        <p class="about">{{dataProf[2]}}</p>
+        <p class="about">Мы пока не подобрали вам пару</p>
       </div>
     </div>
     <div class="info">
       <div class="adress">
         <p class="name">Адресс доставки: </p>
-        <p class="about">фывфыв</p>
+        <p class="about">Мы пока не подобрали вам пару</p>
       </div>
       <div class="date">
         <p class="name">Удобные даты и время доставки: </p>
-        <p class="about">фывфыв</p>
+        <p class="about">Мы пока не подобрали вам пару</p>
       </div>
       <button>Скачать ваучер на доставку</button>
     </div>
