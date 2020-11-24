@@ -70,9 +70,6 @@ export default {
       this.$emit('endLogin', data)
     },
     login(data) {
-      console.log('-----------');
-      console.log(data);
-      console.log('-----------');
       this.dataProf = data;
       this.ProfP = !this.ProfP;
     },

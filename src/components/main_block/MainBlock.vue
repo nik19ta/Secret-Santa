@@ -56,7 +56,9 @@ export default {
         })
         .then(response => response.text())
         .then((response) => {
-          // vm.numbers1 = JSON.parse(response).counts;
+          vm.numbers1 = JSON.parse(response).counts;
+          vm.numbers2 = JSON.parse(response).deportaments;
+          vm.numbers3 = JSON.parse(response).branches;
         })
         .catch(err => console.log(err))
   },
