@@ -32,7 +32,7 @@ export default {
       const vm = this;
       $.ajax({
         type: "POST",
-        url: "http://localhost:3650/login",
+        url: "http://194.242.120.163:3650/login",
         crossDomain: true,
         data: {
           'password': vm.password,
