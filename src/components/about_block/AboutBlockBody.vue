@@ -5,7 +5,7 @@
                 <div class="steps">
                     <div class="step1">
                         <img src="../../assets/about/1step.svg" class="icon" alt="">
-<!--                        <div class="greenLine" />-->
+                       <div class="greenLine" />
                         <div class="text">
                             <p class="title">Подаешь заявку</p>
                             <p class="about">В ней нужно немного рассказать о своих увлечениях и помочь Санте намекнуть, какому подарку ты был бы рад, или что точно не хочешь получить.</p>
@@ -13,7 +13,7 @@
                     </div>
                     <div class="step2">
                         <img src="../../assets/about/2step.svg" class="icon" alt="">
-<!--                        <div class="greenLine" />-->
+                       <div class="greenLine" />
                         <div class="text">
                             <p class="title">Получаешь уведомление</p>
                             <p class="about">Оно подтвердит твое участие, а также покажет, для кого ты стал Тайным сантой. В твоем профиле будет информация о коллеге его увлечениях и желаниях.</p>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="step3">
                         <img src="../../assets/about/3step.svg" class="icon" alt="">
-<!--                        <div class="greenLine" />-->
+                       <div class="greenLine" />
                         <div class="text">
                             <p class="title">Готовишь подарок</p>
                             <p class="about">Приготовь подарок, придумай для него название и выбери способ, как ты его подаришь (самостоятельно или через HR*). </p>
@@ -66,9 +66,12 @@
     }
     .greenLine {
         height: 2px;
-        width: 50px;
+        width: 70px;
         background-color: #00A460;
         box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        right: -60px;
+        top: 40px;
     }
     .steps {
         display: flex;
@@ -108,6 +111,7 @@
     .step2,
     .step3,
     .step4{
+        position: relative;
         text-align: center;
     }
     .wrapper {
@@ -118,6 +122,15 @@
         padding-left: 10px;
     }
     @media screen and (max-width: 1665px) {
+        .greenLine {
+        height: 2px;
+        width: 70px;
+        background-color: #00A460;
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        right: -40px;
+        top: 40px;
+        }
         img {
             height: 70px;
         }
@@ -132,6 +145,15 @@
         }
     }
     @media screen and (max-width: 1430px) {
+        .greenLine {
+        height: 2px;
+        width: 70px;
+        background-color: #00A460;
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        right: -60px;
+        top: 40px;
+        }
         .body {
             padding-top: 70px;
         }
@@ -155,6 +177,17 @@
         .discount {
             padding: 10px;
             width: 400px;
+        }
+
+    @media screen and (max-width: 1240px) {
+        .greenLine {
+        height: 2px;
+        width: 70px;
+        background-color: #00A460;
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        right: -50px;
+        top: 40px;
         }
     }
 </style>
