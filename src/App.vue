@@ -21,18 +21,34 @@ export default {
   },
   mounted() {
     const vm = this;
-    $.ajax({
-      type: "POST",
-      xhrFields: { withCredentials:true },
-      url: "http://localhost:3650/auto_login",
-      crossDomain: true,
-      success: function(data) {
-        console.log(data);
-        if (data == 'Error') {
-          vm.loginStatus = 'Error'
-        }
-      }
-    });
+
+
+    // fetch('http://localhost:3650/auto_login', {
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         method: "POST",
+    //     })
+    //     .then(response => response.text())
+    //     .then((response) => {
+    //       console.log(JSON.parse(response));
+    //       // vm.numbers1 = JSON.parse(response).counts;
+    //     })
+    //     .catch(err => console.log(err))
+    
+    // $.ajax({
+    //   type: "POST",
+    //   xhrFields: { withCredentials:true },
+    //   url: "http://localhost:3650/auto_login",
+    //   crossDomain: true,
+    //   success: function(data) {
+    //     console.log(data);
+    //     if (data == 'Error') {
+    //       vm.loginStatus = 'Error'
+    //     }
+    //   }
+    // });
     vm.loginStatus = 'Error'
   },
   methods: {

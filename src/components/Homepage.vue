@@ -77,28 +77,54 @@ export default {
 
       console.log(vm.dataPeple);
 
-      $.ajax({
-        type: "POST",
-        xhrFields: { withCredentials:true },
-        url: "http://localhost:3650/add",
-        crossDomain: true,
-        data: {
+      let data = {
           'about': this.dataPeple.about,
           'blacklist': this.dataPeple.blacklist,
-          'branches': this.dataPeple.branches,
-          'departments': 'this.dataPeple.departments',
-          'name': this.dataPeple.name,
           'wishlist': this.dataPeple.wishlist,
           'email': this.authData.email,
+          'deliveryDate': this.dataPeple.deliveryDate,
+          'adress': this.dataPeple.adress,
           'password': this.authData.password,
-        },
-        success: function(data) {
-          console.log('1234567890987654')
-          vm.dataProf = data.data;
-          vm.ProfP = !vm.ProfP;
-          vm.isReg = !vm.isReg;
         }
-      });
+
+        console.log(data);
+
+      fetch('http://localhost:3650/add', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then((response) => {
+          console.log(JSON.parse(response));
+        })
+        .catch(err => console.log(err))
+
+      // $.ajax({
+      //   type: "POST",
+      //   xhrFields: { withCredentials:true },
+      //   url: "http://localhost:3650/add",
+      //   crossDomain: true,
+      //   data: {
+      //     'about': this.dataPeple.about,
+      //     'blacklist': this.dataPeple.blacklist,
+      //     'branches': this.dataPeple.branches,
+      //     'departments': 'this.dataPeple.departments',
+      //     'name': this.dataPeple.name,
+      //     'wishlist': this.dataPeple.wishlist,
+      //     'email': this.authData.email,
+      //     'password': this.authData.password,
+      //   },
+      //   success: function(data) {
+      //     console.log('1234567890987654')
+      //     vm.dataProf = data.data;
+      //     vm.ProfP = !vm.ProfP;
+      //     vm.isReg = !vm.isReg;
+      //   }
+      // });
 
     }
   }

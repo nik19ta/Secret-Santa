@@ -71,7 +71,9 @@ export default {
         return {
             about: '',
             wishlist: '',
-            blacklist: ''
+            blacklist: '',
+            deliveryDate: '',
+            adress: ''
         }
     },
           methods: {
@@ -80,6 +82,8 @@ export default {
                       'about': this.about,
                       'wishlist': this.wishlist,
                       'blacklist': this.blacklist,
+                      'deliveryDate': this.deliveryDate,
+                      'adress': this.adress,
                   })
               },
               start(data) {
