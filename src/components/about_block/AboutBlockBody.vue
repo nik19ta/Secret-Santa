@@ -144,15 +144,16 @@
             font-size: 16px;
         }
     }
+
     @media screen and (max-width: 1430px) {
         .greenLine {
-        height: 2px;
-        width: 70px;
-        background-color: #00A460;
-        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        right: -60px;
-        top: 40px;
+            height: 2px;
+            width: 70px;
+            background-color: #00A460;
+            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            right: -60px;
+            top: 40px;
         }
         .body {
             padding-top: 70px;
@@ -178,6 +179,7 @@
             padding: 10px;
             width: 400px;
         }
+    }
 
     @media screen and (max-width: 1240px) {
         .greenLine {
