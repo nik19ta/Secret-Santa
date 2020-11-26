@@ -47,13 +47,13 @@
                                 Тайного Санты и прислать фотку:)</p>
                         </div>
                     </div>
-                </div>
                 <div class="discount">
                     <p class="discountText">За участие в Тайном Санте ты получишь скидку в Боброшопе.
                         Как только ты отправишь подарок, станет доступной беспроигрышная лотерея: участвуй и получай
                         свою скидку от 10% до 60% на любой лот в декабрьской Бобромании и радуй себя новогодними
                         покупками за бобры!
                     </p>
+                </div>
                 </div>
             </div>
         </div>
@@ -91,18 +91,23 @@
     .steps {
         display: flex;
         justify-content: space-between;
+        position: relative;
+        padding-bottom: 250px;
     }
     p {
         font-size: 15px;
         text-align: left;
     }
     .discount {
-        margin-top: 40px;
+        position: absolute;
+        right: 0px;
+        /* margin-top: 40px; */
+        bottom: 0;
         padding: 5px 20px;
         width: 450px;
         background: #FF645A;
         border-radius: 20px 20px 0 0;
-        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); */
     }
     .discountText {
         font-size: 18px;
@@ -137,7 +142,7 @@
         padding-left: 10px;
     }
     @media screen and (max-width: 1665px) {
-        .greenLine {
+        /* .greenLine {
         height: 2px;
         width: 70px;
         background-color: #00A460;
@@ -145,7 +150,7 @@
         position: absolute;
         right: -40px;
         top: 40px;
-        }
+        } */
         img {
             height: 70px;
         }
@@ -161,7 +166,7 @@
     }
 
     @media screen and (max-width: 1430px) {
-        .greenLine {
+        /* .greenLine {
             height: 2px;
             width: 70px;
             background-color: #00A460;
@@ -169,7 +174,7 @@
             position: absolute;
             right: -60px;
             top: 40px;
-        }
+        } */
         .body {
             padding-top: 70px;
         }
@@ -197,7 +202,7 @@
     }
 
     @media screen and (max-width: 1240px) {
-        .greenLine {
+        /* .greenLine {
         height: 2px;
         width: 70px;
         background-color: #00A460;
@@ -205,6 +210,6 @@
         position: absolute;
         right: -50px;
         top: 40px;
-        }
+        } */
     }
 </style>

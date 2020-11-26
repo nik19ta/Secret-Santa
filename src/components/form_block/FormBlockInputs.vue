@@ -44,7 +44,7 @@
         <img @mouseenter="() => start(6)" @mouseleave="() => stop(6)" class="info img_6" src="../../assets/green_info.png" alt="info">
       </div>
       <div class="text_ps ps_6">
-        <p class="about">????.</p>
+        <p class="about">Номер телефона, по которому с тобой сможет связаться</p>
       </div>
     </div>
 
