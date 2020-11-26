@@ -32,7 +32,16 @@
         <p class="name">Удобные даты и время доставки: </p>
         <p class="about">Мы пока не подобрали вам пару</p>
       </div>
+      <div>
+        <div class="row" >
+
       <button>Скачать ваучер на доставку</button>
+      <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
+      <div class="text_ps ps_2">
+        <p class="about_text">Напиши, что тебе хотелось бы получить, или обозначь сферу, подарок из которой тебе точно пригодится. Список поможет Санте подобрать для тебя что-то актуальное. Но креативный подход никто не отменял ;)</p>
+      </div>
+        </div>
+      </div>
     </div>
     <div class="present_info">
       <hr>
@@ -55,7 +64,7 @@
           <option value="">Лично</option>
           <option value="">Через HR</option>
         </select> -->
-        <button>Подарок готов</button>
+        <button class='disabled' >Подарок готов</button>
       </div>
       <hr>
       <div class="status">
@@ -103,6 +112,16 @@ export default {
     dataProf: {},
     isSend: { }
   },
+  methods: {
+    start(data) {
+                document.querySelector(`.ps_${data}`).classList.add("vis");
+                document.querySelector(`.img_${data}`).src = require("../../assets/visited_info.png")
+  },
+    stop(data) {
+                document.querySelector(`.img_${data}`).src = require("../../assets/green_info.png")
+                document.querySelector(`.ps_${data}`).classList.remove("vis");
+    }
+  },
   mounted() {
   },
   components: {}
@@ -110,6 +129,46 @@ export default {
 </script>
 
 <style scoped>
+.disabled{
+  
+}
+.about_text {
+    color: #494949;
+    font-size: 15px;
+    line-height: 132.2%;
+    font-family: CrocWebLight;
+    font-style: normal;
+    font-weight: normal;
+  }
+.info_img {
+    height: 40px;
+    margin-left: 10px;
+    margin-top: -10px;
+    width: 40px;
+  }
+.text_ps{
+  display: none;
+  visibility: hidden;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  background: #FFFFFF;
+  box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  right: -60%;
+  top: 0;
+  padding: 10px;
+}
+.row{
+   display: flex; 
+   align-items: center;
+   width: 100%;
+   position: relative;
+  }
+.vis {
+    visibility: visible;
+    display: flex;
+  }
 .div_in_block{
   width: 100%;
   height: 50px;
