@@ -38,13 +38,13 @@
     </div>
 
     <div class="all" > 
-      <label for="adress">Номер телефона </label>
+      <label for="phoneNumber">Номер телефона </label>
       <div class="row" >
-      <input id="adress" type="text" v-model="phone" required>
+      <input id="phoneNumber" type="text" v-model="phone" required>
         <img @mouseenter="() => start(6)" @mouseleave="() => stop(6)" class="info img_6" src="../../assets/green_info.png" alt="info">
       </div>
       <div class="text_ps ps_6">
-        <p class="about">Номер телефона, по которому с тобой сможет связаться</p>
+        <p class="about">Номер телефона, по которому с тобой сможет связаться курьер</p>
       </div>
     </div>
 
@@ -119,6 +119,7 @@ export default {
   display: none;
   visibility: hidden;
   width: 100%;
+  max-width: 500px;
   position: absolute;
   z-index: 2;
   background: #FFFFFF;
