@@ -79,7 +79,7 @@ export default {
     height: 620px;
     background-color: #00A460;
     background-image: url("../../assets/santas/santa_homepage.svg");
-    background-size: cover ;
+    background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.1);
     border-radius: 0px 0px 150px 150px;

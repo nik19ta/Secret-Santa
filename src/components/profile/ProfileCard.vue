@@ -24,23 +24,24 @@
       </div>
     </div>
     <div class="info">
-      <div class="adress">
+      <div class="div_in_block">
         <p class="name">Адресс доставки: </p>
-        <p class="about">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
       </div>
-      <div class="date">
+      <div class="div_in_block">
         <p class="name">Удобные даты и время доставки: </p>
-        <p class="about">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
       </div>
       <div>
         <div class="row" >
 
-      <button>Скачать ваучер на доставку</button>
-      <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
-      <div class="text_ps ps_2">
-        <p class="about_text">Напиши, что тебе хотелось бы получить, или обозначь сферу, подарок из которой тебе точно пригодится. Список поможет Санте подобрать для тебя что-то актуальное. Но креативный подход никто не отменял ;)</p>
-      </div>
+          <button>Скачать ваучер на доставку</button>
+          <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
+          <div class="text_ps ps_2">
+            <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Скачай ваучер для того, чтобы отправить подарок службой Major Express.</p>
+          </div>
         </div>
+        <button class="discount">Получить скидку</button>
       </div>
     </div>
     <div class="present_info">
@@ -150,12 +151,13 @@ export default {
   display: none;
   visibility: hidden;
   width: 100%;
+  max-width: 400px;
   position: absolute;
   z-index: 2;
   background: #FFFFFF;
   box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  right: -60%;
+  right: -22%;
   top: 0;
   padding: 10px;
 }
@@ -172,6 +174,7 @@ export default {
 .div_in_block{
   width: 100%;
   height: 50px;
+  margin-bottom: 20px;
 }
   .card {
     margin-top: 40px;
@@ -242,6 +245,13 @@ export default {
     font-family: CrocWebRegular;
     font-size: 20px;
   }
+  .discount {
+    background-color: grey;
+    color: white;
+  }
+  .discount:hover {
+    background-color: #454545;
+  }
   button:hover {
     background-color: #b04740;
   }
@@ -300,7 +310,8 @@ export default {
     background-color: #00A460;
   }
   .status {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
     display: flex;
   }
   .status .about, .about_active{
@@ -357,7 +368,6 @@ export default {
     color: #494949;
     font-size: 16px;
     min-height: 40px;
-    margin-top: -15px;
   }
   .about_active {
     font-size: 16px;
@@ -395,6 +405,13 @@ export default {
     .about_active {
       font-size: 15px;
       color: #00A460;
+    }
+    .text_ps{
+      right: -16%;
+      max-width: 350px;
+    }
+    .about_text {
+      font-size: 14px;
     }
     .avatar {
       height: 140px;
@@ -465,6 +482,13 @@ export default {
   @media screen and (max-width: 1430px) {
     .feedbackText {
       font-size: 14px;
+    }
+    .text_ps{
+      right: -16%;
+      max-width: 280px;
+    }
+    .about_text {
+      font-size: 12px;
     }
     .about {
       color: #494949;
