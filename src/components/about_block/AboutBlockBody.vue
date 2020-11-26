@@ -48,6 +48,7 @@
                         </div>
                     </div>
                 <div class="discount">
+                    <img class="img_" src="../../assets/BoBro_А4_new-06.png" alt="">
                     <p class="discountText">За участие в Тайном Санте ты получишь скидку в Боброшопе.
                         Как только ты отправишь подарок, станет доступной беспроигрышная лотерея: участвуй и получай
                         свою скидку от 10% до 60% на любой лот в декабрьской Бобромании и радуй себя новогодними
@@ -98,15 +99,21 @@
         font-size: 15px;
         text-align: left;
     }
+    .img_{
+        width: 200px;
+        height:200px;
+    }
     .discount {
         position: absolute;
-        right: 0px;
+        right: calc(50% - (600px/2) - 10px);
         /* margin-top: 40px; */
         bottom: 0;
         padding: 5px 20px;
-        width: 450px;
+        width: 600px;
         background: #FF645A;
         border-radius: 20px 20px 0 0;
+        display: flex;
+        justify-content: space-between;
         /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); */
     }
     .discountText {
@@ -195,10 +202,10 @@
             font-size: 10px;
             color: #6B6B6B;
         }
-        .discount {
+        /* .discount {
             padding: 10px;
             width: 400px;
-        }
+        } */
     }
 
     @media screen and (max-width: 1240px) {

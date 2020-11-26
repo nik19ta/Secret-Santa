@@ -835,12 +835,17 @@ export default {
     toProf() {
       event.preventDefault(); 
 
-      this.$emit('toProf', {
-        'email': this.email,
-        'password': this.password,
-        'branches': this.branches,
-        'departments': this.Департаментs,
-      })
+      if (this.email.split('@')[1] == 'croc.ru') {
+        this.$emit('toProf', {
+          'email': this.email,
+          'password': this.password,
+          'branches': this.branches,
+          'departments': this.Департаментs,
+        })
+      } else {
+        alert('Почта должна быть @croc.ru')
+      }
+
     }
   }
 }
