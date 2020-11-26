@@ -96,6 +96,7 @@ export default {
           'email': this.authData.email,
           'deliveryDate': this.dataPeple.deliveryDate,
           'adress': this.dataPeple.adress,
+          'phone': this.dataPeple.phone,
           'password': this.authData.password,
         }
 

@@ -38,6 +38,17 @@
     </div>
 
     <div class="all" > 
+      <label for="adress">Номер телефона </label>
+      <div class="row" >
+      <input id="adress" type="text" v-model="phone" required>
+        <img @mouseenter="() => start(6)" @mouseleave="() => stop(6)" class="info img_6" src="../../assets/green_info.png" alt="info">
+      </div>
+      <div class="text_ps ps_6">
+        <p class="about">????.</p>
+      </div>
+    </div>
+
+    <div class="all" > 
       <label for="adress">Адрес доставки</label>
       <div class="row" >
       <input id="adress" type="text" v-model="adress" required>
@@ -84,6 +95,7 @@ export default {
                       'blacklist': this.blacklist,
                       'deliveryDate': this.deliveryDate,
                       'adress': this.adress,
+                      'phone': this.phone,
                   })
               },
               start(data) {
