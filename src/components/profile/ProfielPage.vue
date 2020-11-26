@@ -1,6 +1,6 @@
 <template>
 <div class="body">
-  <button type="button" @click='toAdmin' v-if='dataProf[9] == "admin" && isAdminbtn ' name="button">Перейти в админ панель</button>
+  <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
   <div class="cards">
     <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend'/>
     <ProfilePresentCard v-if='!isAdmin' />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ProfileCard from './ProfileCard'
+  import ProfileCard from './ProfileCard'
 import ProfilePresentCard from './ProfilePresentCard'
 import admin from '../admin/admin'
 
@@ -31,6 +31,37 @@ export default {
       isSend: false
     }
   },
+  mounted() {
+    console.log(this.dataProf.isAdmin);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    console.log(this.dataProf);
+    // fetch('http://194.242.120.163:3650/get_info', {
+    //     headers: {
+    //       'Accept': 'application/json',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     method: "GET",
+    //   })
+    //   .then(response => response.text())
+    //   .then((response) => {
+    //     vm.numbers1 = JSON.parse(response).counts;
+    //     vm.numbers2 = JSON.parse(response).deportaments;
+    //     vm.numbers3 = JSON.parse(response).branches;
+    //   })
+    //   .catch(err => console.log(err))
+  },
   methods: {
     toAdmin() {
       // this.isAdmin = !this.isAdmin;
@@ -39,7 +70,7 @@ export default {
       this.isAdminbtn = !this.isAdminbtn;
     }
   }
-}
+} 
 </script>
 
 <style scoped>

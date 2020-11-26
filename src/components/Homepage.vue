@@ -70,7 +70,7 @@ export default {
       this.$emit('endLogin', data)
     },
     login(data) {
-      this.dataProf = data;
+      this.dataProf = data.info;
       this.ProfP = !this.ProfP;
     },
     ToRed(data) {

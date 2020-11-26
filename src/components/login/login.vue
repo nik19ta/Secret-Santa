@@ -44,7 +44,7 @@ export default {
              alert('Не верный логин');
           }
           else {
-            vm.$emit('login', data.data)
+            vm.$emit('login', data)
           }
         }
       });

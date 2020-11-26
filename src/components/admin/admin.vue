@@ -24,22 +24,25 @@
           <div class='contentdiv' >Отправить подарок</div>
           <div class='contentdiv' >Статус</div>
         </div>
-        <div v-for='item in data.success' v-bind:key='item'  class="">
+        <div v-for='item in data' v-bind:key='item'  class="">
 
 
         <div @click='other(item[0])' class="lineContent" >
-          <div class='contentdiv name' >{{item[5]}} </div>
-          <div class='contentdiv' >{{item[4]}} </div>
-          <div class='contentdiv' >{{item[3]}} </div>
-          <div class='contentdiv' >{{item[7]}}</div>
-          <div class='contentdiv name' >-</div>
+          <div class='contentdiv name' >{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }} </div>
+          <div class='contentdiv' >{{item.department}}</div>
+          <div class='contentdiv' >{{item.branch}}</div>
+          <div class='contentdiv' >{{item.gmail}}</div>
+          <!-- <div class='contentdiv' >{{item.Position}}</div> -->
+          <!-- <div class='contentdiv' >{{item.adress}}</div> -->
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
-          <div class='contentdiv' > <input class='inputIndiv' type="text" name="" value=""> </div>
+          <div class='contentdiv' >-</div>
+          <div class='contentdiv' >-</div>
+          <!-- <div class='contentdiv' > <input class='inputIndiv' type="text" name="" value=""> </div> -->
         </div>
         <div :id='item[0]' class="none">
           <button type="button" class='btn1' name="button">Отправить пару</button>
@@ -65,10 +68,10 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://194.242.120.163:3650/AllData",
+      url: "http://194.242.120.163:3650/all_users",
       success: function(data) {
         console.log(data);
-        vm.data = data;
+        vm.data = data.data;
       }
     });
   },
@@ -103,6 +106,7 @@ export default {
 }
 .lineContent{
   cursor: pointer;
+  width: 100%;
 }
 header{
   display: flex;
@@ -157,8 +161,7 @@ header p{
   width: 20px;
 }
 .contentdiv{
-  min-width: calc(calc(100vw - 60px) /13);
-  max-width: calc(calc(100vw - 60px) /13);
+  width: calc(calc(100vw - 60px) /13);
   white-space: nowrap; /* Отменяем перенос текста */
   overflow: hidden; /* Обрезаем содержимое */
   padding: 4px;
