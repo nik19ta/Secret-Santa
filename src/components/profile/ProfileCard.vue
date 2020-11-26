@@ -9,12 +9,18 @@
         <p class="about">{{dataProf.aboutMe}}</p>
       </div>
       <div class="text">
+        <div class="div_in_block" >
         <p class="name">О колллеге: </p>
-        <p class="about">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        </div>
+        <div class="div_in_block" >
         <p class="name">Он точно будет рад:</p>
-        <p class="about">Мы пока не подобрали вам пару</p>
+        <p class=" text_in_div_ab">Мы пока не подобрали вам пару</p>
+        </div>
+        <div class="div_in_block" >
         <p class="name">Лучше не дарить:</p>
-        <p class="about">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        </div>
       </div>
     </div>
     <div class="info">
@@ -30,7 +36,7 @@
     </div>
     <div class="present_info">
       <hr>
-      <form class="form">
+      <div class="form" >
         <p class="name">Если ты уже подготовил подарок, укажи название подарка и как будешь дарить </p>
         <label for="present_name">Название подарка</label>
         <div class="input_block">
@@ -43,14 +49,14 @@
           <input id="wish" type="text" v-model="wish">
           <div class="info"></div>
         </div>
-
+<!-- 
         <label for="gift">Как будешь дарить</label>
         <select name="gift" v-model="gift" id="gift">
           <option value="">Лично</option>
           <option value="">Через HR</option>
-        </select>
+        </select> -->
         <button>Подарок готов</button>
-      </form>
+      </div>
       <hr>
       <div class="status">
         <div class="first_step">
@@ -104,6 +110,10 @@ export default {
 </script>
 
 <style scoped>
+.div_in_block{
+  width: 100%;
+  height: 50px;
+}
   .card {
     margin-top: 40px;
     margin-left: 40px;
@@ -276,6 +286,8 @@ export default {
   .text {
     margin-top: -20px;
     margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
     width: 500px;
   }
   .about_block {
@@ -286,6 +298,7 @@ export default {
     color: #494949;
     font-size: 16px;
     min-height: 40px;
+    margin-top: -15px;
   }
   .about_active {
     font-size: 16px;
@@ -298,6 +311,13 @@ export default {
     margin-right: auto;
     margin-left: auto;
     max-width: 85%;
+  }
+  .text_in_div_ab{
+    height: auto !important ;
+    color: #494949;
+    font-size: 16px;
+    /* min-height: 40px; */
+    margin-top: -15px;
   }
   @media screen and (max-width: 1665px) {
     .card {

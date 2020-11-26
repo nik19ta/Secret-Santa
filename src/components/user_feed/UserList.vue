@@ -1,26 +1,26 @@
 <template>
     <div class="list">
         <div class="user1">
-            <img :src="require(`../../assets/${data[0].img}_.png`)" class="avatar">
+            <img v-if="data[0]"  :src="require(`../../assets/${data[0].img}_.png`)" class="avatar">
             <p class="name">{{data[0].name}}</p>
             <p class="about">{{data[0].Position}}</p>
         </div>
-        <div class="user2">
+        <div v-if="data[1]" class="user2">
             <img :src="require(`../../assets/${data[1].img}_.png`)" class="avatar">
             <p class="name">{{data[1].name}}</p>
             <p class="about">{{data[1].Position}}</p>
         </div>
-        <div class="user3">
+        <div v-if="data[2]" class="user3">
             <img :src="require(`../../assets/${data[2].img}_.png`)" class="avatar">
             <p class="name">{{data[2].name}}</p>
             <p class="about">{{data[2].Position}}</p>
         </div>
-        <div class="user4">
+        <div v-if="data[3]" class="user4">
             <img :src="require(`../../assets/${data[3].img}_.png`)" class="avatar">
             <p class="name">{{data[3].name}}</p>
             <p class="about">{{data[3].Position}}</p>
         </div>
-        <div class="user5">
+        <div v-if="data[4]" class="user5">
             <img :src="require(`../../assets/${data[4].img}_.png`)" class="avatar">
             <p class="name">{{data[4].name}}</p>
             <p class="about">{{data[4].Position}}</p>
