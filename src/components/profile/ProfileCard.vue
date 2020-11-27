@@ -184,6 +184,7 @@ export default {
     background-color: white;
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    min-height: 1440px;
   }
   .form {
     display: flex;
@@ -392,7 +393,7 @@ export default {
     .card {
       margin-top: 40px;
       margin-left: 40px;
-      min-height: 80%;
+      min-height: 1350px;
       max-width: 20%;
       background-color: white;
       border-radius: 40px;
@@ -480,6 +481,9 @@ export default {
     }
   }
   @media screen and (max-width: 1430px) {
+    .card {
+      min-height: 1370px;
+    }
     .feedbackText {
       font-size: 14px;
     }

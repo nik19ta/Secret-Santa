@@ -129,6 +129,7 @@
         width: 260px;
         border-radius: 28px;
         box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+        min-height: 200px;
     }
     .step1,
     .step2,
@@ -145,23 +146,19 @@
         padding-left: 10px;
     }
     @media screen and (max-width: 1665px) {
-        /* .greenLine {
-        height: 2px;
-        width: 70px;
-        background-color: #00A460;
-        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        right: -40px;
-        top: 40px;
-        } */
         img {
             height: 70px;
+        }
+        .img_{
+            width: 150px;
+            height: 150px;
         }
         .text {
             padding: 10px;
             width: 220px;
             border-radius: 28px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+            min-height: 250px;
         }
         .discountText {
             font-size: 16px;
@@ -169,26 +166,23 @@
     }
 
     @media screen and (max-width: 1430px) {
-        /* .greenLine {
-            height: 2px;
-            width: 70px;
-            background-color: #00A460;
-            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            right: -60px;
-            top: 40px;
-        } */
+
         .body {
             padding-top: 70px;
         }
         img {
             height: 70px;
         }
+        .img_ {
+            height: 120px;
+            width: 120px;
+        }
         .text {
             padding: 10px;
             width: 180px;
             border-radius: 28px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+            min-height: 200px;
         }
         p {
             font-size: 12px;
@@ -198,21 +192,12 @@
             font-size: 10px;
             color: #6B6B6B;
         }
+        .discountText {
+            font-size: 14px;
+        }
         /* .discount {
             padding: 10px;
             width: 400px;
-        } */
-    }
-
-    @media screen and (max-width: 1240px) {
-        /* .greenLine {
-        height: 2px;
-        width: 70px;
-        background-color: #00A460;
-        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        right: -50px;
-        top: 40px;
         } */
     }
 </style>
