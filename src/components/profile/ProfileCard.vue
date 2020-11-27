@@ -5,32 +5,32 @@
     <div class="about_block">
       <div class="user">
         <img src="../../assets/avatar.png" class="avatar">
-        <p class="name">{{dataProf.gmail}}</p>
-        <p class="about">{{dataProf.aboutMe}}</p>
+        <p class="name">Мы пока не подобрали вам пару.</p>
+        <p class="about">Мы пока не подобрали вам пару.</p>
       </div>
       <div class="text">
         <div class="div_in_block" >
         <p class="name">О колллеге: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
         </div>
         <div class="div_in_block" >
         <p class="name">Он точно будет рад:</p>
-        <p class=" text_in_div_ab">Мы пока не подобрали вам пару</p>
+        <p class=" text_in_div_ab">Мы пока не подобрали вам пару.</p>
         </div>
         <div class="div_in_block" >
         <p class="name">Лучше не дарить:</p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
         </div>
       </div>
     </div>
     <div class="info">
       <div class="div_in_block">
         <p class="name">Адресс доставки: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
       </div>
       <div class="div_in_block">
         <p class="name">Удобные даты и время доставки: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару</p>
+        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
       </div>
       <div>
         <div class="row" >
@@ -345,7 +345,6 @@ export default {
     width: 180px;
     background-color: #A2A19C;
     border-radius: 50%;
-    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -353,6 +352,7 @@ export default {
     color: #494949;
     font-weight: bold;
     font-size: 18px;
+    margin: 15px 0;
   }
   .text {
     margin-top: -20px;
@@ -369,6 +369,8 @@ export default {
     color: #494949;
     font-size: 16px;
     min-height: 40px;
+    margin: 15px 0;
+
   }
   .about_active {
     font-size: 16px;
