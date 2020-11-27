@@ -82,7 +82,7 @@
     background-color: white;
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-    max-height: 1370px;
+    max-height: 1440px;
   }
   p {
     font-size: 64px;
@@ -265,7 +265,7 @@
     .card {
       margin-top: 40px;
       margin-left: 40px;
-      min-height: 80%;
+      min-height: 1350px;
       max-width: 20%;
       background-color: white;
       border-radius: 40px;
@@ -333,7 +333,7 @@
   }
   @media screen and (max-width: 1430px) {
     .card {
-      max-height: 1250px;
+      min-height: 1370px;
     }
 
     .photos img {
