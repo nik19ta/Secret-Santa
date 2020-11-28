@@ -62,8 +62,8 @@
     <div class="all" > 
       <label for="deliveryDate">Удобные даты доставки (от/до)</label>
       <div class="row" >
-      <input id="deliveryFromDate" type="date" name="calendarFrom" class="calendarFrom" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateFrom" required>
-      <input id="deliveryToDate" type="date" name="calendarTo" class="calendarTo" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateTo" required>
+      <input id="deliveryFromDate" type="date" name="calendarFrom" class="calendarFrom" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDate1" required>
+      <input id="deliveryToDate" type="date" name="calendarTo" class="calendarTo" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDate2" required>
         <img @mouseenter="() => start(5)" @mouseleave="() => stop(5)" class="info img_5" src="../../assets/green_info.png" alt="info">
     </div>
     <div class="text_ps ps_5 ">
@@ -71,7 +71,7 @@
     </div>
     </div>
 
-    <button @click='registr'>Готов дарить и получать подарки!</button>
+    <span class="button" @click='registr'>Готов дарить и получать подарки!</span>
   </form>
 </div>
 </template>
@@ -84,7 +84,8 @@ export default {
             about: '',
             wishlist: '',
             blacklist: '',
-            deliveryDate: '',
+            deliveryDate1: '',
+            deliveryDate2: '',
             adress: ''
         }
     },
@@ -94,7 +95,7 @@ export default {
                       'about': this.about,
                       'wishlist': this.wishlist,
                       'blacklist': this.blacklist,
-                      'deliveryDate': this.deliveryDate,
+                      'deliveryDate': `${this.deliveryDate1}-${this.deliveryDate2}`,
                       'adress': this.adress,
                       'phone': this.phone,
                   })
@@ -210,6 +211,25 @@ export default {
   button:hover {
     background-color: #b04740;
   }
+  .button {
+    outline: none;
+    cursor: pointer;
+    height: 60px;
+    margin-top: 30px;
+    background-color: #FF645A;
+    width: 100%;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    font-family: CrocWebRegular;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button:hover {
+    background-color: #b04740;
+  }
   @media screen and (max-width: 1665px) {
     .form {
       width: 525px;
@@ -226,6 +246,12 @@ export default {
       height: 40px;
     }
     button {
+      height: 50px;
+      margin-top: 30px;
+      width: 100%;
+      font-size: 20px;
+    }
+    .button {
       height: 50px;
       margin-top: 30px;
       width: 100%;
@@ -263,6 +289,12 @@ export default {
       height: 30px;
     }
     button {
+      height: 40px;
+      margin-top: 30px;
+      width: 100%;
+      font-size: 16px;
+    }
+    .button {
       height: 40px;
       margin-top: 30px;
       width: 100%;
