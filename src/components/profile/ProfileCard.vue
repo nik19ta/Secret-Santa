@@ -34,20 +34,25 @@
       </div>
       <div>
         <div class="row" >
-
           <button>Скачать ваучер на доставку</button>
           <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_2">
             <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Скачай ваучер для того, чтобы отправить подарок службой Major Express.</p>
           </div>
         </div>
-        <button class="discount">Получить скидку</button>
+        <div class="row" >
+          <button class="discount">Получить скидку</button>
+          <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
+          <div class="text_ps ps_3">
+            <p class="about_text">Ты сможешь получить скидку в декабрьском боброшопе после того, как отправишь свой подарок.</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="present_info">
       <hr>
       <div class="form" >
-        <p class="name">Если ты уже подготовил подарок, укажи название подарка и как будешь дарить </p>
+        <p class="name">Если ты уже подготовил подарок, расскажи о нем:</p>
         <label for="present_name">Название подарка</label>
         <div class="input_block">
           <input id="present_name" type="text" v-model="present_name">
@@ -162,7 +167,7 @@ export default {
   padding: 10px;
 }
 .row{
-   display: flex; 
+   display: flex;
    align-items: center;
    width: 100%;
    position: relative;
