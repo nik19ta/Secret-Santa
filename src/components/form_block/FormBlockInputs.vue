@@ -60,9 +60,10 @@
     </div>
 
     <div class="all" > 
-      <label for="deliveryDate">Удобные даты доставки</label>
+      <label for="deliveryDate">Удобные даты доставки (от/до)</label>
       <div class="row" >
-      <input id="deliveryDate" type="date" name="calendar" value="2020-12-10" min="2020-12-10" max="2020-12-25" v-model="deliveryDate" required>
+      <input id="deliveryFromDate" type="date" name="calendarFrom" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateFrom" required>
+      <input id="deliveryToDate" type="date" name="calendarTo" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateTo" required>
         <img @mouseenter="() => start(5)" @mouseleave="() => stop(5)" class="info img_5" src="../../assets/green_info.png" alt="info">
     </div>
     <div class="text_ps ps_5 ">
