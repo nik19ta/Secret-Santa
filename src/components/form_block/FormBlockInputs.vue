@@ -62,8 +62,8 @@
     <div class="all" > 
       <label for="deliveryDate">Удобные даты доставки (от/до)</label>
       <div class="row" >
-      <input id="deliveryFromDate" type="date" name="calendarFrom" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateFrom" required>
-      <input id="deliveryToDate" type="date" name="calendarTo" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateTo" required>
+      <input id="deliveryFromDate" type="date" name="calendarFrom" class="calendarFrom" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateFrom" required>
+      <input id="deliveryToDate" type="date" name="calendarTo" class="calendarTo" value="2020-12-12" min="2020-12-12" max="2020-12-21" v-model="deliveryDateTo" required>
         <img @mouseenter="() => start(5)" @mouseleave="() => stop(5)" class="info img_5" src="../../assets/green_info.png" alt="info">
     </div>
     <div class="text_ps ps_5 ">
@@ -161,8 +161,8 @@ export default {
     border-color: #DDDDDD;
     background-color: #FCFCFC;
     height: 40px;
-    width: 98%;
-    padding: 1%;
+    width: 100%;
+    padding: 3px 10px;
   }
 
   .title {
@@ -190,6 +190,9 @@ export default {
     font-family: CrocWebLight;
     font-style: normal;
     font-weight: normal;
+  }
+  .calendarFrom {
+    margin-right: 10px;
   }
   button {
     outline: none;
@@ -221,8 +224,6 @@ export default {
       outline: none;
       font-size: 15px;
       height: 40px;
-      width: 98%;
-      padding: 1%;
     }
     button {
       height: 50px;
@@ -260,8 +261,6 @@ export default {
       outline: none;
       font-size: 12px;
       height: 30px;
-      width: 98%;
-      padding: 1%;
     }
     button {
       height: 40px;
