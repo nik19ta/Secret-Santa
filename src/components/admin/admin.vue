@@ -4,13 +4,43 @@
       <header>
         <p>тайный <br> санта</p>
         <div class="flexBtns">
-          <button type="button" class='btn' name="button">Сформировать пары</button>
-          <a type="button" href='http://localhost:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
+          <button @click='to_form_the_pairs' type="button" class='btn' name="button">Сформировать пары</button>
+          <a type="button" href='http://194.242.120.163:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
         </div>
       </header>
 
       <div class="table">
-        <div class='titleTr' >
+
+        <table>
+          <tr>
+            <th>Тайный санта</th>
+            <th>Департамент</th>
+            <th>Отдел</th>
+            <th>Почта</th>
+            <th>Одоряемый</th>
+            <th>Департамент</th>
+            <th>Отдел</th>
+            <th>Название подарка</th>
+            <th>Как будет дарить</th>
+            <th>Как будет дарить</th>
+            <th>Статус</th>
+          </tr>
+          <tr v-for='item in data'  >
+          <td>{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }}</td>
+          <td>{{item.department ==  '' || item.department == null ? 'Не указанно' : item.department}}</td>
+          <td>{{item.branch  ==  '' || item.branch == null ? 'Не указанно' : item.branch }}</td>
+          <td>{{item.gmail}}</td>
+          <td>{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</td>
+          <td>{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</td>
+          <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
+          <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
+          <td>{{get_user(item.gmail)['gmail'] == null? 'Нет данных': get_user(item.gmail)['gmail']}}</td>
+          <td>-</td>
+          <td>-</td>
+          </tr>
+        </table>
+
+        <!-- <div class='titleTr' >
           <div class='contentdiv' >Тайный санта </div>
           <div class='contentdiv' >Департамент</div>
           <div class='contentdiv' >Отдел</div>
@@ -32,25 +62,22 @@
           <div class='contentdiv' >{{item.department}}</div>
           <div class='contentdiv' >{{item.branch}}</div>
           <div class='contentdiv' >{{item.gmail}}</div>
-          <!-- <div class='contentdiv' >{{item.Position}}</div> -->
-          <!-- <div class='contentdiv' >{{item.adress}}</div> -->
+          <div class='contentdiv' >{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</div>
+          <div class='contentdiv' >{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</div>
+          <div class='contentdiv' >{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</div>
+          <div class='contentdiv' >{{get_user(item.gmail)['gmail'] == null? 'Нет данных': get_user(item.gmail)['gmail']}}</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
           <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <!-- <div class='contentdiv' > <input class='inputIndiv' type="text" name="" value=""> </div> -->
-        </div>
-        <div :id='item[0]' class="none">
+        </div> -->
+        <!-- <div :id='item[0]' class="none">
           <button type="button" class='btn1' name="button">Отправить пару</button>
           <button type="button" class='btn1' name="button">Отправить подарок</button>
           <button type="button" class='btn1' name="button">одарок получен</button>
           <button type="button" class='btn1' name="button">Напомнить ТС </button>
           <button type="button" class='btn1' name="button">Напомнить сотруднику</button>
-        </div>
+        </div> -->
 
         </div>
       </div>
@@ -68,7 +95,7 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://localhost:3650/all_users",
+      url: "http://194.242.120.163:3650/all_users",
       success: function(data) {
         console.log(data);
         vm.data = data.data;
@@ -81,6 +108,17 @@ export default {
     }
   },
   methods: {
+    get_user(email){
+      for (let i = 0; i < this.data.length; i++) {
+        console.log(this.data[i].gmail);
+        console.log(email);
+        if (this.data[i].isPart==email) {
+          console.log(this.data[i]);
+          return this.data[i]
+        }
+        return false
+      } 
+    },
     other(data) {
 
       if ($("#" + data).css('display') == 'none') {
@@ -89,21 +127,57 @@ export default {
         $("#" + data).removeClass('Wiew')
       }
 
+    },
+    to_form_the_pairs() {
+      const vm = this;
+
+      console.log('!!')
+      alert('Пары сформированны')
+      fetch(` http://194.242.120.163:3650/algoritm`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+      })
+      .then(response => response.text())
+      .then((response) => {
+        console.log(response);
+
+        $.ajax({
+      type: "GET",
+      url: "http://194.242.120.163:3650/all_users",
+      success: function(data) {
+        console.log(data);
+        vm.data = data.data;
+      }
+    });
+      })
+      .catch(err => console.log(err))
     }
+
   }
 }
 </script>
 
 <style lang="css" scoped>
+TD, TH {
+    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid #000; /* Рамка вокруг ячеек */
+   }
+   TABLE {
+    /* background: #dc0; Цвет фона таблицы */
+    border: 1px solid #000; /* Рамка вокруг таблицы */
+   }
 .none{
   display: none;
 }
-.titleTr, .lineContent{
+/* .titleTr, .lineContent{
   width: 98%;
   display: flex;
   justify-content:space-around;
   border-bottom: 1px solid #E5E5E5;
-}
+} */
 .lineContent{
   cursor: pointer;
   width: 100%;
@@ -161,7 +235,7 @@ header p{
   width: 20px;
 }
 .contentdiv{
-  width: calc(calc(100vw - 60px) /13);
+  width: 200px;
   white-space: nowrap; /* Отменяем перенос текста */
   overflow: hidden; /* Обрезаем содержимое */
   padding: 4px;
@@ -179,6 +253,10 @@ header p{
   margin-right: 20px;
   cursor: pointer;
   color: 494949;
+  line-height: 40px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
 .btn1{
   border: 1px solid #494949;

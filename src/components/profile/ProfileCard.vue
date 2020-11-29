@@ -4,7 +4,7 @@
     <p class="title">ты стал <br>тайным сантой</p>
     <div class="about_block">
       <div class="user">
-        <img src="../../assets/avatar.png" class="avatar">
+        <img :src="require(`../../assets/${par.img}_.png`)" class="avatar">
         <p v-if="this.dataProf.isPart == false" class="name">Мы пока не подобрали вам пару.</p>
         <p v-if="this.dataProf.isPart" class="name">{{par.Name}}</p>
         <!-- <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
@@ -138,7 +138,7 @@ export default {
   },
   mounted() {
     // this.dataProf.isPart
-    // fetch('http://localhost:3650/get_info', {
+    // fetch('http://194.242.120.163:3650/get_info', {
     //     headers: {
     //       'Accept': 'application/json',
     //       'Content-Type': 'application/json'
@@ -375,6 +375,7 @@ export default {
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid;
   }
   .name {
     color: #494949;

@@ -34,7 +34,7 @@ export default {
   },
   mounted() {
     console.log(this.dataProf);
-    fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
+    fetch(` http://194.242.120.163:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
