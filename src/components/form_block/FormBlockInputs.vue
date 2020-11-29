@@ -127,7 +127,7 @@ export default {
   background: #FFFFFF;
   box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  right: -110%;
+  right: -105%;
   top: 0;
   padding: 10px;
 }
@@ -269,6 +269,10 @@ export default {
       border-radius: 28px;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     }
+    .text_ps {
+      width: 80%;
+      right: -90%;
+    }
   }
   @media screen and (max-width: 1430px) {
     .form {
@@ -311,6 +315,10 @@ export default {
       width: 260px;
       border-radius: 28px;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    .text_ps {
+      width: 100%;
+      right: -110%;
     }
   }
 </style>
