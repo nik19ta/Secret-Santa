@@ -5,32 +5,39 @@
     <div class="about_block">
       <div class="user">
         <img src="../../assets/avatar.png" class="avatar">
-        <p class="name">Мы пока не подобрали вам пару.</p>
-        <p class="about">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class="name">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="name">{{par.Name}}</p>
+        <!-- <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="about">{{par.aboutMe}}</p> -->
       </div>
       <div class="text">
         <div class="div_in_block" >
         <p class="name">О колллеге: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.aboutMe}}</p>
         </div>
         <div class="div_in_block" >
         <p class="name">Он точно будет рад:</p>
-        <p class=" text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class=" text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class=" text_in_div_ab">{{par.whiteList}}</p>
         </div>
         <div class="div_in_block" >
         <p class="name">Лучше не дарить:</p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.blackList}}</p>
         </div>
       </div>
     </div>
     <div class="info">
       <div class="div_in_block">
         <p class="name">Адресс доставки: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.adress}}</p>
       </div>
       <div class="div_in_block">
         <p class="name">Удобные даты и время доставки: </p>
-        <p class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.deliveryDate}}</p>
       </div>
       <div>
         <div class="row" >
@@ -116,7 +123,8 @@ export default {
   name: 'ProfileCard',
   props: {
     dataProf: {},
-    isSend: { }
+    isSend: {},
+    par: {}
   },
   methods: {
     start(data) {
@@ -129,6 +137,21 @@ export default {
     }
   },
   mounted() {
+    // this.dataProf.isPart
+    // fetch('http://localhost:3650/get_info', {
+    //     headers: {
+    //       'Accept': 'application/json',
+    //       'Content-Type': 'application/json'
+    //     },
+    //     method: "GET",
+    //   })
+    //   .then(response => response.text())
+    //   .then((response) => {
+    //     vm.numbers1 = JSON.parse(response).counts;
+    //     vm.numbers2 = JSON.parse(response).deportaments;
+    //     vm.numbers3 = JSON.parse(response).branches;
+    //   })
+    //   .catch(err => console.log(err))
   },
   components: {}
 }

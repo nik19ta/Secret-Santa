@@ -23,7 +23,7 @@ export default {
     const vm = this;
 
 
-    // fetch('http://194.242.120.163:3650/auto_login', {
+    // fetch('http://localhost:3650/auto_login', {
     //         headers: {
     //             'Accept': 'application/json',
     //             'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export default {
     // $.ajax({
     //   type: "POST",
     //   xhrFields: { withCredentials:true },
-    //   url: "http://194.242.120.163:3650/auto_login",
+    //   url: "http://localhost:3650/auto_login",
     //   crossDomain: true,
     //   success: function(data) {
     //     console.log(data);

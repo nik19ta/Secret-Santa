@@ -38,7 +38,7 @@
         },
         mounted() {
             let vm = this;
-            fetch('http://194.242.120.163:3650/get_count_users', {
+            fetch('http://localhost:3650/get_count_users', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

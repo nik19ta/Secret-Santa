@@ -2,7 +2,7 @@
 <div class="body">
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
   <div class="cards">
-    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend'/>
+    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par' />
     <ProfilePresentCard v-if='!isAdmin' />
     <admin v-if='isAdmin' />
   </div>
@@ -22,45 +22,31 @@ export default {
   components: {
     ProfileCard,
     ProfilePresentCard,
-    admin
+    admin,
   },
   data() {
     return {
       isAdmin: false,
       isAdminbtn: true,
-      isSend: false
+      isSend: false,
+      par: {}
     }
   },
   mounted() {
-    console.log(this.dataProf.isAdmin);
     console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    console.log(this.dataProf);
-    // fetch('http://194.242.120.163:3650/get_info', {
-    //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //     },
-    //     method: "GET",
-    //   })
-    //   .then(response => response.text())
-    //   .then((response) => {
-    //     vm.numbers1 = JSON.parse(response).counts;
-    //     vm.numbers2 = JSON.parse(response).deportaments;
-    //     vm.numbers3 = JSON.parse(response).branches;
-    //   })
-    //   .catch(err => console.log(err))
+    fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "GET",
+      })
+      .then(response => response.text())
+      .then((response) => {
+        console.log(JSON.parse(response).data);
+        this.par = JSON.parse(response).data;
+      })
+      .catch(err => console.log(err))
   },
   methods: {
     toAdmin() {
