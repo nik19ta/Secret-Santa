@@ -5,7 +5,7 @@
         <p>тайный <br> санта</p>
         <div class="flexBtns">
           <button @click='to_form_the_pairs' type="button" class='btn' name="button">Сформировать пары</button>
-          <a type="button" href='http://localhost:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
+          <a type="button" href='http://194.242.120.163:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
         </div>
       </header>
 
@@ -95,7 +95,7 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://localhost:3650/all_users",
+      url: "http://194.242.120.163:3650/all_users",
       success: function(data) {
         console.log(data);
         vm.data = data.data;
@@ -133,7 +133,7 @@ export default {
 
       console.log('!!')
       alert('Пары сформированны')
-      fetch(` http://localhost:3650/algoritm`, {
+      fetch(` http://194.242.120.163:3650/algoritm`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -146,7 +146,7 @@ export default {
 
         $.ajax({
       type: "GET",
-      url: "http://localhost:3650/all_users",
+      url: "http://194.242.120.163:3650/all_users",
       success: function(data) {
         console.log(data);
         vm.data = data.data;
