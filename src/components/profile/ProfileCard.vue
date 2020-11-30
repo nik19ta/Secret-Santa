@@ -58,7 +58,7 @@
     </div>
     <div class="present_info">
       <hr>
-      <div class="form" >
+      <div v-if="dataProf.status <= 1" class="form" >
         <p class="name">Если ты уже подготовил подарок, расскажи о нем:</p>
         <label for="present_name">Название подарка</label>
         <div class="input_block">
@@ -77,7 +77,7 @@
           <option value="">Лично</option>
           <option value="">Через HR</option>
         </select> -->
-        <button class='disabled' >Подарок готов</button>
+        <button @click="gift_is_ready" class='disabled' >Подарок готов</button>
       </div>
       <hr>
       <div class="status">
@@ -124,6 +124,12 @@ export default {
     isSend: {},
     par: {}
   },
+  data: function() {
+    return {
+      present_name: '',
+      wish: '',
+    }
+  },
   methods: {
     start(data) {
       document.querySelector(`.ps_${data}`).classList.add("vis");
@@ -132,10 +138,15 @@ export default {
     stop(data) {
       document.querySelector(`.img_${data}`).src = require("../../assets/green_info.png")
                 document.querySelector(`.ps_${data}`).classList.remove("vis");
+    },
+    gift_is_ready(){
+      this.$emit('gift_is_ready',{
+        "name_gift": this.present_name,
+        "wish": this.wish
+      })
     }
   },
   mounted() {
-    console.log(this.par);
     console.log(this.par);
     console.log(this.par);
     console.log(this.par);

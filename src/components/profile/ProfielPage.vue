@@ -2,7 +2,7 @@
 <div class="body">
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
   <div class="cards">
-    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
+    <ProfileCard @gift_is_ready='gift_is_ready' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
     <ProfilePresentCard v-if='!isAdmin' :giver='giver' />
     <admin v-if='isAdmin' />
   </div>
@@ -66,6 +66,27 @@ export default {
       .catch(err => console.log(err))
   },
   methods: {
+    gift_is_ready(data) {
+      console.log(data);
+      fetch(`http://localhost:3650/gift_is_ready`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+                name_gift: data.name_gift,
+                wish: data.wish,
+                email: this.dataProf.isPart
+        })
+      })
+      .then(response => response.text())
+      .then((response) => {
+        console.log(JSON.parse(response).data);
+        this.giver = JSON.parse(response).data;
+      })
+      .catch(err => console.log(err))
+    },
     toAdmin() {
       // this.isAdmin = !this.isAdmin;
       console.log('ni');
