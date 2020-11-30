@@ -41,7 +41,7 @@
       </div>
       <div>
         <div class="row" >
-          <button>Скачать ваучер на доставку</button>
+          <button class="voucher">Скачать ваучер на доставку</button>
           <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_2">
             <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Скачай ваучер для того, чтобы отправить подарок службой Major Express.</p>
@@ -173,7 +173,7 @@ export default {
   box-shadow: 0px 14px 60px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   right: -22%;
-  top: 0;
+  top: -15px;
   padding: 10px;
 }
 .row{
@@ -350,7 +350,6 @@ export default {
     border-color: #00A460;
   }
   .user {
-    height: 300px;
     width: 200px;
     text-align: center;
     color: white;
@@ -358,20 +357,17 @@ export default {
   .avatar {
     height: 180px;
     width: 180px;
-    background-color: #A2A19C;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid;
   }
   .name {
     color: #494949;
     font-weight: bold;
     font-size: 18px;
-    margin: 15px 0;
+    margin-bottom: 15px;
   }
   .text {
-    margin-top: -20px;
     margin-left: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -379,7 +375,7 @@ export default {
   }
   .about_block {
     display: flex;
-    height: 300px;
+    height: 270px;
   }
   .about {
     color: #494949;
@@ -400,12 +396,12 @@ export default {
     margin-left: auto;
     max-width: 85%;
   }
-  .text_in_div_ab{
+  .text_in_div_ab {
     height: auto !important ;
     color: #494949;
     font-size: 16px;
     /* min-height: 40px; */
-    margin-top: -15px;
+    margin-top: -10px;
   }
   @media screen and (max-width: 1665px) {
     .card {
@@ -433,9 +429,8 @@ export default {
       font-size: 14px;
     }
     .avatar {
-      height: 140px;
-      width: 140px;
-      background-color: #A2A19C;
+      height: 160px;
+      width: 160px;
       border-radius: 50%;
       margin-bottom: 20px;
       margin-left: auto;
@@ -447,7 +442,6 @@ export default {
       font-size: 15px;
     }
     .text {
-      margin-top: -20px;
       margin-left: 40px;
       width: 450px;
     }
@@ -506,8 +500,8 @@ export default {
       font-size: 14px;
     }
     .text_ps{
-      right: -16%;
-      max-width: 280px;
+      right: -15%;
+      max-width: 230px;
     }
     .about_text {
       font-size: 12px;
@@ -516,6 +510,12 @@ export default {
       color: #494949;
       font-size: 12px;
       min-height: 55px;
+    }
+    .discount {
+      width: 250px;
+    }
+    .voucher {
+      width: 250px;
     }
     .about_active {
       font-size: 12px;
