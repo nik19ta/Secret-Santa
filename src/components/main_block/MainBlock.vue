@@ -47,7 +47,7 @@ export default {
   },
   mounted: function() {
     let vm = this;
-    fetch('http://194.242.120.163:3650/count/', {
+    fetch('http://localhost:3650/count/', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'

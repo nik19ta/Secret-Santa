@@ -28,34 +28,33 @@
       <button @click="send" class="send">Отправить Тайному Санте</button>
       <div class="status">
         <div class="first_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/1step.svg, когда нажимается кнопка "Подарок готов" в профиле -->
-          <img src="../../assets/profile_vectors/inactive/1step.svg" alt="" class="step_img">
+          <!-- circle_active -->
+          <img  :src="giver.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на circle_active) -->
-          <div class="circle_inactive"></div>
-          <p class="about">Тайный Санта готовит тебе подарок</p>
+          <div  :class="[giver.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
+          <p :class="[giver.status > 0 ? 'about_active' : '']"  class="about">Тайный Санта готовит тебе подарок</p>
         </div>
 
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на status_hr_active) -->
         <div class="status_hr_inactive"></div>
 
         <div class="second_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/2step.svg, когда нажимается кнопка "Отправить подарок" в админ панели -->
-          <img src="../../assets/profile_vectors/inactive/2step.svg" alt="" class="step_img">
+          <img :src="giver.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
-          <div class="circle_inactive"></div>
-          <p class="about">Тебе уже отправили подарок от Тайного Санты</p>
+          <div  :class="[giver.status > 1 ? 'circle_active' : 'circle_inactive']"></div>
+          <p :class="[giver.status > 1 ? 'about_active' : '']"  class="about">Тебе уже отправили подарок от Тайного Санты</p>
         </div>
 
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
         <div class="status_hr_inactive"></div>
 
         <div class="third_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/3step.svg, когда нажимается кнопка "Подарок получен" в админ панели -->
-          <img src="../../assets/profile_vectors/inactive/3step.svg" alt="" class="step_img">
+          <img :src="giver.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок получен" в админ панели -->
-          <div class="circle_inactive"></div>
-          <p class="about">Ты получил свой подарок!</p>
+          <div  :class="[giver.status > 2 ? 'circle_active' : 'circle_inactive']"></div>
+          <p :class="[giver.status > 2 ? 'about_active' : '']"  class="about">Ты получил свой подарок!</p>
         </div>
+
       </div>
     </div>
   </div>
@@ -69,7 +68,13 @@
       send() {
         console.log('send');
       }
-    }
+    },
+    props: {
+      giver: {},
+  },
+  mounted() {
+    console.log(this.giver.status);
+  }
   }
 </script>
 

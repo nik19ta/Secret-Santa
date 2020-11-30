@@ -82,33 +82,31 @@
       <hr>
       <div class="status">
         <div class="first_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/1step.svg, когда нажимается кнопка "Подарок готов" в профиле -->
-          <img src="../../assets/profile_vectors/inactive/1step.svg" alt="" class="step_img">
+          <!-- circle_active -->
+          <img  :src="dataProf.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на circle_active) -->
-          <div class="circle_inactive"></div>
-          <p class="about">Подготовка подарка</p>
+          <div  :class="[dataProf.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
+          <p :class="[dataProf.status > 0 ? 'about_active' : '']" class="about">Подготовка подарка</p>
         </div>
 
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на status_hr_active) -->
         <div class="status_hr_inactive"></div>
 
         <div class="second_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/2step.svg, когда нажимается кнопка "Отправить подарок" в админ панели -->
-          <img src="../../assets/profile_vectors/inactive/2step.svg" alt="" class="step_img">
+          <img :src="dataProf.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
-          <div class="circle_inactive"></div>
-          <p class="about">Подарок ждет своего получателя</p>
+          <div :class="[dataProf.status > 1 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
+          <p :class="[dataProf.status > 1 ? 'about_active' : '']"  class="about">Подарок ждет своего получателя</p>
         </div>
 
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
         <div class="status_hr_inactive"></div>
 
         <div class="third_step">
-          <!-- Картинка меняется на ../../assets/profile_vectors/active/3step.svg, когда нажимается кнопка "Подарок получен" в админ панели -->
-          <img src="../../assets/profile_vectors/inactive/3step.svg" alt="" class="step_img">
+          <img :src="dataProf.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок получен" в админ панели -->
-          <div class="circle_inactive"></div>
-          <p class="about">Ура! Твой подарок получили :)</p>
+          <div :class="[dataProf.status > 2 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
+          <p :class="[dataProf.status > 2 ? 'about_active' : '']"  class="about">Ура! Твой подарок получили :)</p>
         </div>
       </div>
     </div>
@@ -128,30 +126,19 @@ export default {
   },
   methods: {
     start(data) {
-                document.querySelector(`.ps_${data}`).classList.add("vis");
+      document.querySelector(`.ps_${data}`).classList.add("vis");
                 document.querySelector(`.img_${data}`).src = require("../../assets/visited_info.png")
   },
     stop(data) {
-                document.querySelector(`.img_${data}`).src = require("../../assets/green_info.png")
+      document.querySelector(`.img_${data}`).src = require("../../assets/green_info.png")
                 document.querySelector(`.ps_${data}`).classList.remove("vis");
     }
   },
   mounted() {
-    // this.dataProf.isPart
-    // fetch('http://194.242.120.163:3650/get_info', {
-    //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //     },
-    //     method: "GET",
-    //   })
-    //   .then(response => response.text())
-    //   .then((response) => {
-    //     vm.numbers1 = JSON.parse(response).counts;
-    //     vm.numbers2 = JSON.parse(response).deportaments;
-    //     vm.numbers3 = JSON.parse(response).branches;
-    //   })
-    //   .catch(err => console.log(err))
+    console.log(this.par);
+    console.log(this.par);
+    console.log(this.par);
+    console.log(this.par);
   },
   components: {}
 }

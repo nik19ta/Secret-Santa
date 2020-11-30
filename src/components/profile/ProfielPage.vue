@@ -2,8 +2,8 @@
 <div class="body">
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
   <div class="cards">
-    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par' />
-    <ProfilePresentCard v-if='!isAdmin' />
+    <ProfileCard :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
+    <ProfilePresentCard v-if='!isAdmin' :giver='giver' />
     <admin v-if='isAdmin' />
   </div>
 </div>
@@ -29,12 +29,13 @@ export default {
       isAdmin: false,
       isAdminbtn: true,
       isSend: false,
-      par: {}
+      par: {},
+      giver: {}
     }
   },
   mounted() {
     console.log(this.dataProf);
-    fetch(` http://194.242.120.163:3650/get_user_email?p=${this.dataProf.isPart}`, {
+    fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -45,6 +46,22 @@ export default {
       .then((response) => {
         console.log(JSON.parse(response).data);
         this.par = JSON.parse(response).data;
+      })
+      .catch(err => console.log(err))
+
+
+
+      fetch(`http://localhost:3650/get_user_giver?p=${this.dataProf.gmail}`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "GET",
+      })
+      .then(response => response.text())
+      .then((response) => {
+        console.log(JSON.parse(response).data);
+        this.giver = JSON.parse(response).data;
       })
       .catch(err => console.log(err))
   },
