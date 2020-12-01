@@ -71,7 +71,7 @@
           <input id="wish" type="text" v-model="wish">
           <div class="info"></div>
         </div>
-<!-- 
+          <!--         
         <label for="gift">Как будешь дарить</label>
         <select name="gift" v-model="gift" id="gift">
           <option value="">Лично</option>
@@ -82,29 +82,20 @@
       <hr>
       <div class="status">
         <div class="first_step">
-          <!-- circle_active -->
           <img  :src="dataProf.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
-          <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на circle_active) -->
           <div  :class="[dataProf.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
           <p :class="[dataProf.status > 0 ? 'about_active' : '']" class="about">Подготовка подарка</p>
         </div>
-
-        <!-- Полоска загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на status_hr_active) -->
         <div class="status_hr_inactive"></div>
 
         <div class="second_step">
           <img :src="dataProf.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
-          <!-- Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
           <div :class="[dataProf.status > 1 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
           <p :class="[dataProf.status > 1 ? 'about_active' : '']"  class="about">Подарок ждет своего получателя</p>
         </div>
-
-        <!-- Полоска загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
         <div class="status_hr_inactive"></div>
-
         <div class="third_step">
           <img :src="dataProf.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
-          <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок получен" в админ панели -->
           <div :class="[dataProf.status > 2 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
           <p :class="[dataProf.status > 2 ? 'about_active' : '']"  class="about">Ура! Твой подарок получили :)</p>
         </div>

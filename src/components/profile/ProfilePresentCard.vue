@@ -88,6 +88,7 @@
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     max-height: 1440px;
+    position: relative;
   }
   p {
     font-size: 64px;
@@ -112,17 +113,16 @@
     height: 2px;
     width: 20%;
     background-color: #6B6B6B;
-    margin-bottom: 70px;
   }
   .status_hr_active {
     align-self: center;
     height: 2px;
     width: 20%;
     background-color: #00A460;
-    margin-bottom: 70px;
   }
   .status {
-    margin-top: 40px;
+    margin-top: 100px;
+    margin-bottom: 40px;
     display: flex;
   }
   .status .about, .about_active{
