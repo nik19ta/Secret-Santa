@@ -12,7 +12,7 @@
   <login v-if='IsLogin' @login='login' />
 </div>
 <div v-else-if='ProfP'>
-  <prof :dataProf='dataProf' />
+  <prof :dataProf='dataProf' @exit='exit' />
 </div>
 </template>
 
@@ -65,6 +65,11 @@ export default {
         .catch(err => console.log(err))
   },
   methods: {
+    exit() {
+      const vm = this;
+      vm.ProfP = !vm.ProfP;
+      vm.IsLogin = false;
+    },
     loginEnd(data) {
       // this.dataPr = data;
       this.$emit('endLogin', data)
@@ -118,6 +123,7 @@ export default {
           vm.dataProf = true;
           vm.ProfP = !vm.ProfP;
           vm.isReg = !vm.isReg;
+          vm.IsLogin = false
         })
         .catch(err => console.log(err))
 

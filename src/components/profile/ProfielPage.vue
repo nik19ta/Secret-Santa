@@ -1,6 +1,7 @@
 <template>
 <div class="body">
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
+  <button class="button_exit" @click='exit' name="button">Выйти</button>
   <div class="cards">
     <ProfileCard @gift_is_ready='gift_is_ready' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
     <ProfilePresentCard v-if='!isAdmin' :giver='giver' />
@@ -66,6 +67,9 @@ export default {
       .catch(err => console.log(err))
   },
   methods: {
+    exit() {
+      this.$emit('exit', {"data": "exit"})
+    },
     gift_is_ready(data) {
       console.log(data);
       fetch(`http://194.242.120.163:3650/gift_is_ready`, {
@@ -119,5 +123,8 @@ export default {
     border-radius: 15px;
     color: #fff;
     cursor: pointer;
+  }
+  .button_exit{
+    left: 40px;
   }
 </style>
