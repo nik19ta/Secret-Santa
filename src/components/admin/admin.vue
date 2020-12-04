@@ -179,6 +179,7 @@ header p{
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .content{
     width: calc(100vw - 60px);
@@ -193,11 +194,18 @@ header p{
 }
 .table{
   width: calc(100vw - 20px);
-  display: flex;
-  /* padding: 10px; */
+  display: flex;  
+  height: 80vh;
+  overflow: auto;
   justify-content: center;
   flex-wrap: wrap;
   margin-left: -20px;
+  position: relative;
+}
+table{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .div{
   width: 20px;
