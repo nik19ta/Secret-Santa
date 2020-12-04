@@ -1,7 +1,7 @@
 <template>
 <div class="body">
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
-  <button class="button_exit" @click='exit' name="button">Выйти</button>
+  <button class="button_exit" @click='exit' name="button">На стартовую страницу</button>
   <div class="cards">
     <ProfileCard @gift_is_ready='gift_is_ready' :giver='giver' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
     <ProfilePresentCard v-if='!isAdmin' :giver='giver' />

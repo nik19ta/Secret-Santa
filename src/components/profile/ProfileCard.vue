@@ -47,13 +47,6 @@
             <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Скачай ваучер для того, чтобы отправить подарок службой Major Express.</p>
           </div>
         </div>
-        <div class="row" >
-          <button @click="discount" class="discount">Получить скидку</button>
-          <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
-          <div class="text_ps ps_3">
-            <p class="about_text">Ты сможешь получить скидку в декабрьском боброшопе после того, как отправишь свой подарок.</p>
-          </div>
-        </div>
       </div>
     </div>
     <div class="present_info">
@@ -79,6 +72,13 @@
         </select> -->
         <button @click="gift_is_ready" class='disabled' >Подарок готов</button>
       </div>
+      <div class="row" >
+          <button @click="discount" class="discount">Получить скидку</button>
+          <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
+          <div class="text_ps ps_3">
+            <p class="about_text">Ты сможешь получить скидку в декабрьском боброшопе после того, как отправишь свой подарок.</p>
+          </div>
+        </div>
       <hr>
       <div class="status">
         <div class="first_step step">
@@ -166,6 +166,8 @@ export default {
           }
         })
         .catch(err => console.log(err))
+      } else {
+        alert('Скидку нельзя получить пока вы не отправили подарок')
       }
     }
   },
@@ -181,6 +183,9 @@ export default {
 }
 .disabled{
   
+}
+.img_3{
+  margin-bottom: -35px;
 }
 .about_text {
     color: #494949;
