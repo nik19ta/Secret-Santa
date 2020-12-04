@@ -35,8 +35,12 @@ export default {
     }
   },
   mounted() {
-    console.log(this.dataProf);
-    fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
+    this.get_user_giver()
+    this.get_user_email()
+  },
+  methods: {
+    get_user_email() {
+      fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -49,9 +53,8 @@ export default {
         this.par = JSON.parse(response).data;
       })
       .catch(err => console.log(err))
-
-
-
+    },
+    get_user_giver() {
       fetch(`http://localhost:3650/get_user_giver?p=${this.dataProf.gmail}`, {
         headers: {
           'Accept': 'application/json',
@@ -65,8 +68,7 @@ export default {
         this.giver = JSON.parse(response).data;
       })
       .catch(err => console.log(err))
-  },
-  methods: {
+    },
     exit() {
       this.$emit('exit', {"data": "exit"})
     },
@@ -86,6 +88,8 @@ export default {
       })
       .then(response => response.text())
       .then((response) => {
+        alert('Успех!')
+        this.dataProf['status'] =2
         console.log(JSON.parse(response).data);
         this.giver = JSON.parse(response).data;
       })

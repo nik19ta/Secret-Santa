@@ -134,14 +134,17 @@ export default {
     gift_is_ready() {
 
       if (this.dataProf.status > 0) {
-        if (this.present_name == '' || this.wish == '') {
-          alert('Поля не могут быть пустыми')
+        if (this.dataProf.status == 2) {
+          alert('Ваш подарок уже отправлен')
         } else {
-          this.$emit('gift_is_ready', {
-            "name_gift": this.present_name,
-            "wish": this.wish
-          })
-
+          if (this.present_name == '' || this.wish == '') {
+            alert('Поля не могут быть пустыми')
+          } else {
+            this.$emit('gift_is_ready', {
+              "name_gift": this.present_name,
+              "wish": this.wish
+            })
+          }
         }
       } else {
         alert('Вы не можете подготовить подарок пока у вас нет пары')
