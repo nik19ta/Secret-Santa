@@ -135,7 +135,7 @@ export default {
 
       if (this.dataProf.status > 0) {
         if (this.dataProf.status == 2) {
-          alert('Ваш подарок уже отправлен')
+          alert('Ваш подарок уже был готов')
         } else {
           if (this.present_name == '' || this.wish == '') {
             alert('Поля не могут быть пустыми')
@@ -162,10 +162,10 @@ export default {
         })
         .then(response => response.text())
         .then((response) => {
-          if (JSON.parse(response).status) {
+          if (JSON.parse(response).status == true) {
             alert(`Вы получили код ${JSON.parse(response).code} на скидку: ${JSON.parse(response).discount}!`)
           } else {
-            alert('Вы уже получили свой код, по вопросам оброщайтесь на почту: eskvortsova@croc.ru')
+            alert(`Вы уже получили свой код ${JSON.parse(response).status}`)
           }
         })
         .catch(err => console.log(err))
