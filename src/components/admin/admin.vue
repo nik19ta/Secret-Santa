@@ -16,69 +16,39 @@
             <th>Тайный санта</th>
             <th>Департамент</th>
             <th>Отдел</th>
+            <th>Адрес</th>
+            <th>Номер</th>
+            <th>Удобные даты доставки</th>
+            <th>Статус</th>
             <th>Почта</th>
             <th>Одоряемый</th>
             <th>Департамент</th>
             <th>Отдел</th>
+            <th>Адрес</th>
             <th>Название подарка</th>
             <th>Как будет дарить</th>
             <th>Как будет дарить</th>
             <th>Статус</th>
           </tr>
           <tr v-for='item in data'  >
-          <td>{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }}</td>
-          <td>{{item.department ==  '' || item.department == null ? 'Не указанно' : item.department}}</td>
-          <td>{{item.branch  ==  '' || item.branch == null ? 'Не указанно' : item.branch }}</td>
-          <td>{{item.gmail}}</td>
-          <td>{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</td>
-          <td>{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</td>
-          <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
-          <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
-          <td>{{get_user(item.gmail)['gmail'] == null? 'Нет данных': get_user(item.gmail)['gmail']}}</td>
-          <td>-</td>
-          <td>-</td>
+            <td>{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }}</td>
+            <td>{{item.department ==  '' || item.department == null ? 'Не указанно' : item.department}}</td>
+            <td>{{item.branch  ==  '' || item.branch == null ? 'Не указанно' : item.branch }}</td>
+            <td>{{item.adress}}</td>
+            <td>{{item.phone  == null ? 'Не указанно' : item.phone}}</td>
+            <td>{{item.deliveryDate  == null ? 'Не указанно' : item.deliveryDate}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.gmail}}</td>
+            <td>{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</td>
+            <td>{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</td>
+            <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
+            <td>{{get_user(item.gmail)['adress'] == null? 'Нет данных':get_user(item.gmail)['adress'] }}</td>
+            <td>Нет данных</td>
+            <td>Нет данных</td>
+            <td>Нет данных</td>
+            <td>{{get_user(item.gmail)['status'] == null? 'Нет данных':get_user(item.gmail)['status'] }}</td>
           </tr>
         </table>
-
-        <!-- <div class='titleTr' >
-          <div class='contentdiv' >Тайный санта </div>
-          <div class='contentdiv' >Департамент</div>
-          <div class='contentdiv' >Отдел</div>
-          <div class='contentdiv' >Почта</div>
-          <div class='contentdiv' >Одоряемый</div>
-          <div class='contentdiv' >Департамент</div>
-          <div class='contentdiv' >Отдел</div>
-          <div class='contentdiv' >Почта</div>
-          <div class='contentdiv' >Название подарка</div>
-          <div class='contentdiv' >Как будет дарить</div>
-          <div class='contentdiv' >Отправить подарок</div>
-          <div class='contentdiv' >Статус</div>
-        </div>
-        <div v-for='item in data' v-bind:key='item'  class="">
-
-
-        <div @click='other(item[0])' class="lineContent" >
-          <div class='contentdiv name' >{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }} </div>
-          <div class='contentdiv' >{{item.department}}</div>
-          <div class='contentdiv' >{{item.branch}}</div>
-          <div class='contentdiv' >{{item.gmail}}</div>
-          <div class='contentdiv' >{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</div>
-          <div class='contentdiv' >{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</div>
-          <div class='contentdiv' >{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</div>
-          <div class='contentdiv' >{{get_user(item.gmail)['gmail'] == null? 'Нет данных': get_user(item.gmail)['gmail']}}</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-          <div class='contentdiv' >-</div>
-        </div> -->
-        <!-- <div :id='item[0]' class="none">
-          <button type="button" class='btn1' name="button">Отправить пару</button>
-          <button type="button" class='btn1' name="button">Отправить подарок</button>
-          <button type="button" class='btn1' name="button">одарок получен</button>
-          <button type="button" class='btn1' name="button">Напомнить ТС </button>
-          <button type="button" class='btn1' name="button">Напомнить сотруднику</button>
-        </div> -->
-
         </div>
       </div>
 
@@ -110,10 +80,7 @@ export default {
   methods: {
     get_user(email){
       for (let i = 0; i < this.data.length; i++) {
-        console.log(this.data[i].gmail);
-        console.log(email);
         if (this.data[i].isPart==email) {
-          console.log(this.data[i]);
           return this.data[i]
         }
         return false
@@ -225,8 +192,9 @@ header p{
   padding: 10px;
 }
 .table{
-  width: calc(100vw - 60px);
+  width: calc(100vw - 20px);
   display: flex;
+  /* padding: 10px; */
   justify-content: center;
   flex-wrap: wrap;
   margin-left: -20px;

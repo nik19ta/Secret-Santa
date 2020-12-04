@@ -80,9 +80,8 @@
 
 <style scoped>
 .step{
-  height: 210px;
-  display: flex;
-}
+    height: 210px;
+  }
   .card {
     margin-top: 40px;
     margin-right: 40px;
@@ -151,15 +150,15 @@
     border-style: solid;
     border-color: #00A460;
   }
+  .about_block {
+    display: flex;
+    height: 270px;
+  }
   .about {
     color: #494949;
     font-size: 16px;
-    min-height: 120px;
-  }
-  .about_active {
-    font-size: 16px;
-    color: #00A460;
-    min-height: 120px;
+    min-height: 40px;
+    margin: 15px 0;
   }
   .present_info {
     display: flex;

@@ -44,7 +44,7 @@
           <button class="voucher">Скачать ваучер на доставку</button>
           <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_2">
-            <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Скачай ваучер для того, чтобы отправить подарок службой Major Express.</p>
+            <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Для того, чтобы заказать курьера и отправить подарок, за день до отправки напиши об этом на рассылку "Секретари" и eskvortsova@croc.ru.</p>
           </div>
         </div>
       </div>
@@ -428,7 +428,6 @@ export default {
     font-size: 16px;
     min-height: 40px;
     margin: 15px 0;
-
   }
   .about_active {
     font-size: 16px;
