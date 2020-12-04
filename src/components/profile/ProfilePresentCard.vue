@@ -27,7 +27,7 @@
       </div>
       <button @click="send" class="send">Отправить Тайному Санте</button>
       <div class="status">
-        <div class="first_step">
+        <div class="first_step step ">
           <!-- circle_active -->
           <img  :src="giver.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на circle_active) -->
@@ -38,7 +38,7 @@
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Подарок готов" в профиле (меняется класс на status_hr_active) -->
         <div class="status_hr_inactive"></div>
 
-        <div class="second_step">
+        <div class="second_step step ">
           <img :src="giver.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
           <div  :class="[giver.status > 1 ? 'circle_active' : 'circle_inactive']"></div>
@@ -48,7 +48,7 @@
         <!-- Полоска загорается зеленым, когда нажимается кнопка "Отправить подарок" в админ панели -->
         <div class="status_hr_inactive"></div>
 
-        <div class="third_step">
+        <div class="third_step step ">
           <img :src="giver.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
           <!-- Кружок загорается зеленым, когда нажимается кнопка "Подарок получен" в админ панели -->
           <div  :class="[giver.status > 2 ? 'circle_active' : 'circle_inactive']"></div>
@@ -79,6 +79,10 @@
 </script>
 
 <style scoped>
+.step{
+  height: 210px;
+  display: flex;
+}
   .card {
     margin-top: 40px;
     margin-right: 40px;
@@ -121,9 +125,12 @@
     background-color: #00A460;
   }
   .status {
-    margin-top: 100px;
-    margin-bottom: 40px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
   }
   .status .about, .about_active{
     text-align: center;

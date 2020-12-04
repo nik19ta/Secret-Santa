@@ -4,11 +4,11 @@
     <p class="title">ты стал <br>тайным сантой</p>
     <div class="about_block">
       <div class="user">
-        <img :src="require(`../../assets/${par.img}_.png`)" class="avatar">
-        <p v-if="this.dataProf.isPart == false" class="name">Мы пока не подобрали вам пару.</p>
+        <img :src="require(`../../assets/${dataProf.img}_.png`)" class="avatar">
+        <p v-if="this.dataProf.isPart == false" class="name">Пары нет.</p>
         <p v-if="this.dataProf.isPart" class="name">{{par.Name}}</p>
-        <!-- <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="about">{{par.aboutMe}}</p> -->
+        <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
+        <p v-if="this.dataProf.isPart" class="about">{{par.aboutMe}}</p>
       </div>
       <div class="text">
         <div class="div_in_block" >
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="row" >
-          <button class="discount">Получить скидку</button>
+          <button @click="discount" class="discount">Получить скидку</button>
           <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_3">
             <p class="about_text">Ты сможешь получить скидку в декабрьском боброшопе после того, как отправишь свой подарок.</p>
@@ -58,7 +58,7 @@
     </div>
     <div class="present_info">
       <hr>
-      <div v-if="dataProf.status <= 1" class="form" >
+      <div class="form" >
         <p class="name">Если ты уже подготовил подарок, расскажи о нем:</p>
         <label for="present_name">Название подарка</label>
         <div class="input_block">
@@ -81,20 +81,20 @@
       </div>
       <hr>
       <div class="status">
-        <div class="first_step">
+        <div class="first_step step">
           <img  :src="dataProf.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
           <div  :class="[dataProf.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
           <p :class="[dataProf.status > 0 ? 'about_active' : '']" class="about">Подготовка подарка</p>
         </div>
         <div class="status_hr_inactive"></div>
 
-        <div class="second_step">
+        <div class="second_step step">
           <img :src="dataProf.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
           <div :class="[dataProf.status > 1 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
           <p :class="[dataProf.status > 1 ? 'about_active' : '']"  class="about">Подарок ждет своего получателя</p>
         </div>
         <div class="status_hr_inactive"></div>
-        <div class="third_step">
+        <div class="third_step step">
           <img :src="dataProf.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
           <div :class="[dataProf.status > 2 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
           <p :class="[dataProf.status > 2 ? 'about_active' : '']"  class="about">Ура! Твой подарок получили :)</p>
@@ -113,7 +113,8 @@ export default {
   props: {
     dataProf: {},
     isSend: {},
-    par: {}
+    par: {},
+    giver: {}
   },
   data: function() {
     return {
@@ -124,29 +125,60 @@ export default {
   methods: {
     start(data) {
       document.querySelector(`.ps_${data}`).classList.add("vis");
-                document.querySelector(`.img_${data}`).src = require("../../assets/visited_info.png")
-  },
+      document.querySelector(`.img_${data}`).src = require("../../assets/visited_info.png")
+    },
     stop(data) {
       document.querySelector(`.img_${data}`).src = require("../../assets/green_info.png")
-                document.querySelector(`.ps_${data}`).classList.remove("vis");
+      document.querySelector(`.ps_${data}`).classList.remove("vis");
     },
-    gift_is_ready(){
-      this.$emit('gift_is_ready',{
-        "name_gift": this.present_name,
-        "wish": this.wish
-      })
+    gift_is_ready() {
+
+      if (this.dataProf.status > 0) {
+        if (this.present_name == '' || this.wish == '') {
+          alert('Поля не могут быть пустыми')
+        } else {
+          this.$emit('gift_is_ready', {
+            "name_gift": this.present_name,
+            "wish": this.wish
+          })
+
+        }
+      } else {
+        alert('Вы не можете подготовить подарок пока у вас нет пары')
+      }
+    },
+    discount() {
+      if (this.dataProf.status > 1) {
+        fetch(` http://localhost:3650/get_discount`, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: "POST",
+          body: JSON.stringify({"email": this.dataProf.gmail })
+        })
+        .then(response => response.text())
+        .then((response) => {
+          if (JSON.parse(response).status) {
+            alert(`Вы получили код ${JSON.parse(response).code} на скидку: ${JSON.parse(response).discount}!`)
+          } else {
+            alert('Вы уже получили свой код, по вопросам оброщайтесь на почту: eskvortsova@croc.ru')
+          }
+        })
+        .catch(err => console.log(err))
+      }
     }
   },
   mounted() {
-    console.log(this.par);
-    console.log(this.par);
-    console.log(this.par);
   },
   components: {}
 }
 </script>
 
 <style scoped>
+.step{
+  height: 210px;
+}
 .disabled{
   
 }
@@ -202,6 +234,7 @@ export default {
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     min-height: 1440px;
+    position: relative;
   }
   .form {
     display: flex;
@@ -328,9 +361,12 @@ export default {
     background-color: #00A460;
   }
   .status {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
   }
   .status .about, .about_active{
     text-align: center;

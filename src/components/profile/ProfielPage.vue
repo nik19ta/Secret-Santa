@@ -3,7 +3,7 @@
   <button type="button" @click='toAdmin' v-if='this.dataProf.isAdmin && isAdminbtn' name="button">Перейти в админ панель</button>
   <button class="button_exit" @click='exit' name="button">Выйти</button>
   <div class="cards">
-    <ProfileCard @gift_is_ready='gift_is_ready' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
+    <ProfileCard @gift_is_ready='gift_is_ready' :giver='giver' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
     <ProfilePresentCard v-if='!isAdmin' :giver='giver' />
     <admin v-if='isAdmin' />
   </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import ProfileCard from './ProfileCard'
+import ProfileCard from './ProfileCard'
 import ProfilePresentCard from './ProfilePresentCard'
 import admin from '../admin/admin'
 
@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     console.log(this.dataProf);
-    fetch(` http://194.242.120.163:3650/get_user_email?p=${this.dataProf.isPart}`, {
+    fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ export default {
 
 
 
-      fetch(`http://194.242.120.163:3650/get_user_giver?p=${this.dataProf.gmail}`, {
+      fetch(`http://localhost:3650/get_user_giver?p=${this.dataProf.gmail}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ export default {
     },
     gift_is_ready(data) {
       console.log(data);
-      fetch(`http://194.242.120.163:3650/gift_is_ready`, {
+      fetch(`http://localhost:3650/gift_is_ready`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ export default {
         body: JSON.stringify({
                 name_gift: data.name_gift,
                 wish: data.wish,
-                email: this.dataProf.isPart
+                email: this.dataProf.gmail
         })
       })
       .then(response => response.text())
@@ -110,7 +110,7 @@ export default {
   }
   .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   button {
     position: absolute;

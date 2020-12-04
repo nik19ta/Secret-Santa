@@ -32,7 +32,7 @@ export default {
       const vm = this;
       $.ajax({
         type: "POST",
-        url: "http://194.242.120.163:3650/login",
+        url: "http://localhost:3650/login",
         crossDomain: true,
         data: {
           'password': vm.password,
@@ -42,12 +42,18 @@ export default {
           console.log(data);
           if (data.data == false) {
              alert('Не верный логин');
+             save_token(data.token)
           }
           else {
             vm.$emit('login', data)
           }
         }
       });
+    }
+  },
+  watch: {
+    save_token(token) {
+      localStorage.token = token;
     }
   }
 }

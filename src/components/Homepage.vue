@@ -51,7 +51,7 @@ export default {
     }
   },
   mounted() {
-    fetch('http://194.242.120.163:3650/auto_login', {
+    fetch('http://localhost:3650/auto_login', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -107,7 +107,7 @@ export default {
 
         console.log(data);
 
-      fetch('http://194.242.120.163:3650/add', {
+      fetch('http://localhost:3650/add', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -117,10 +117,12 @@ export default {
         })
         .then(response => response.text())
         .then((response) => {
+          this.dataProf =JSON.parse(response).data;
           console.log(JSON.parse(response).data);
+          // save_token(JSON.parse(response).data.token)
 
           
-          vm.dataProf = true;
+          // vm.dataProf = true;
           vm.ProfP = !vm.ProfP;
           vm.isReg = !vm.isReg;
           vm.IsLogin = false
@@ -130,7 +132,7 @@ export default {
       // $.ajax({
       //   type: "POST",
       //   xhrFields: { withCredentials:true },
-      //   url: "http://194.242.120.163:3650/add",
+      //   url: "http://localhost:3650/add",
       //   crossDomain: true,
       //   data: {
       //     'about': this.dataPeple.about,
@@ -150,6 +152,11 @@ export default {
       //   }
       // });
 
+    }
+  },
+  watch: {
+    save_token(token) {
+      localStorage.token = token;
     }
   }
 }
