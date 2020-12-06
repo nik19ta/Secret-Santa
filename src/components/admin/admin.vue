@@ -4,8 +4,9 @@
       <header>
         <p>тайный <br> санта</p>
         <div class="flexBtns">
+          <button @click='go_to_lk' type="button" class='btn exit' name="button">Перейти в лк</button>
           <button @click='to_form_the_pairs' type="button" class='btn' name="button">Сформировать пары</button>
-          <a type="button" href='http://194.242.120.163:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
+          <a type="button" href='http://localhost:3650/get_users_in_csv' class='btn' name="button">Выгрузить аналитику</a>
         </div>
       </header>
 
@@ -19,7 +20,6 @@
             <th>Адрес</th>
             <th>Номер</th>
             <th>Удобные даты доставки</th>
-            <th>Статус</th>
             <th>Почта</th>
             <th>Одоряемый</th>
             <th>Департамент</th>
@@ -29,6 +29,9 @@
             <th>Как будет дарить</th>
             <th>Как будет дарить</th>
             <th>Статус</th>
+            <th>Подтверждение </th>
+            <!-- <th>dev </th> -->
+            <!-- <th>dev</th> -->
           </tr>
           <tr v-for='item in data'  >
             <td>{{item.Name ==  '' || item.Name == null ? 'Не указанно' : item.Name }}</td>
@@ -37,16 +40,17 @@
             <td>{{item.adress}}</td>
             <td>{{item.phone  == null ? 'Не указанно' : item.phone}}</td>
             <td>{{item.deliveryDate  == null ? 'Не указанно' : item.deliveryDate}}</td>
-            <td>{{item.status}}</td>
             <td>{{item.gmail}}</td>
             <td>{{item.isPart == false ?  "Нет одоряемого":item.isPart }}</td>
-            <td>{{get_user(item.gmail)['department'] == null? 'Нет данных': get_user(item.gmail)['department']}}</td>
-            <td>{{get_user(item.gmail)['branch'] == null? 'Нет данных':get_user(item.gmail)['branch'] }}</td>
-            <td>{{get_user(item.gmail)['adress'] == null? 'Нет данных':get_user(item.gmail)['adress'] }}</td>
+            <td>{{get_user(item.isPart)['department'] == null? 'Нет данных': get_user(item.isPart)['department']}}</td>
+            <td>{{get_user(item.isPart)['branch'] == null? 'Нет данных':get_user(item.isPart)['branch'] }}</td>
+            <td>{{get_user(item.isPart)['adress'] == null? 'Нет данных':get_user(item.isPart)['adress'] }}</td>
             <td>Нет данных</td>
             <td>Нет данных</td>
             <td>Нет данных</td>
-            <td>{{get_user(item.gmail)['status'] == null? 'Нет данных':get_user(item.gmail)['status'] }}</td>
+            <td>{{get_user(item.isPart)['status'] == null? 'Нет данных' : get_user(item.isPart)['status'] == 0 ? "Пары нет" : get_user(item.isPart)['status'] == 1 ? "Подготовка подарка" : get_user(item.isPart)['status'] == 2 ? "Подарок отправлен" : get_user(item.isPart)['status'] == 3? "Подарок получен" : 0 }}</td>
+            <td v-if="get_user(item.isPart)['statusT'] == true" > <button @click="() => confirm(get_user(item.isPart))" >Подтвердить</button> </td>
+            <!-- <td> {{get_user(item.isPart)}} </td> -->
           </tr>
         </table>
         </div>
@@ -65,7 +69,7 @@ export default {
     const vm = this;
     $.ajax({
       type: "GET",
-      url: "http://194.242.120.163:3650/all_users",
+      url: "http://localhost:3650/all_users",
       success: function(data) {
         console.log(data);
         vm.data = data.data;
@@ -78,13 +82,44 @@ export default {
     }
   },
   methods: {
+    confirm(data) {
+      const vm = this;
+      fetch(` http://localhost:3650/ok_gm`, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+            email: data.gmail
+        })
+      })
+      .then(response => response.text())
+      .then((response) => {
+        alert('Статус подтверждён')
+        console.log(response);
+        $.ajax({
+          type: "GET",
+          url: "http://localhost:3650/all_users",
+          success: function (data) {
+            console.log(data);
+            vm.data = data.data;
+          }
+        });
+        
+      })
+      .catch(err => console.log(err))
+    },
+    go_to_lk() {
+      this.$emit('gotolk')
+    },
     get_user(email){
       for (let i = 0; i < this.data.length; i++) {
-        if (this.data[i].isPart==email) {
+        if (this.data[i].gmail==email) {
           return this.data[i]
         }
-        return false
       } 
+      return false
     },
     other(data) {
 
@@ -100,7 +135,7 @@ export default {
 
       console.log('!!')
       alert('Пары сформированны')
-      fetch(` http://194.242.120.163:3650/algoritm`, {
+      fetch(` http://localhost:3650/algoritm`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -113,7 +148,7 @@ export default {
 
         $.ajax({
       type: "GET",
-      url: "http://194.242.120.163:3650/all_users",
+      url: "http://localhost:3650/all_users",
       success: function(data) {
         console.log(data);
         vm.data = data.data;
@@ -250,5 +285,12 @@ table{
   justify-content:  flex-end;
   height: 40px;
   align-items: center;
+}
+.exit{
+  background: #FF645A;
+    border: 0;
+    font-size: 20px;
+    border-radius: 15px;
+    color: #fff;
 }
 </style>

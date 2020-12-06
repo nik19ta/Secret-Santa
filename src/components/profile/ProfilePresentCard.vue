@@ -10,6 +10,7 @@
       </div>
       <div class="hr">
         <hr>
+        <button @click="gift_r" class="disabled gift__received">Подарок получен</button>
       </div>
       <div class="form">
         <label>Если ты уже получил подарок, <br>напиши о своих впечатлениях Тайному Санте :)</label>
@@ -67,6 +68,30 @@
     methods: {
       send() {
         console.log('send');
+      },
+      gift_r() {
+        const vm = this;
+        if (this.giver.status > 1) {
+          fetch(` http://localhost:3650/status_edit`, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({
+              "email": this.giver.gmail, 
+              "count": 4
+              })
+          })
+          .then(response => response.text())
+          .then((response) => {
+            alert("Успех")
+            vm.giver.status = 4
+          })
+          .catch(err => console.log(err))
+        } else {
+          alert('Вы не можете получить подарок пока тайный санта не отправл его')
+        }
       }
     },
     props: {
@@ -92,6 +117,7 @@
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     max-height: 1440px;
     position: relative;
+    padding-bottom: 40px;
   }
   p {
     font-size: 64px;
@@ -215,13 +241,13 @@
     height: 50px;
     margin-top: 30px;
     border: none;
-    width: 40%;
     background-color: #ff645a;
     color: white;
     border-radius: 30px;
     border-color: #DDDDDD;
     font-family: CrocWebRegular;
     font-size: 20px;
+    width: 250px!important;
   }
   .send:hover {
     background-color: #b04740;
@@ -368,5 +394,23 @@
     .status_hr_active {
       margin-bottom: 0;
     }
+  }
+  .gift__received{
+  margin-top: 0px;
+  width: 250px;
+}
+button {
+    cursor: pointer;
+    align-self: flex-start;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    width: 50%;
+    background-color: #ff645a;
+    color: white;
+    border-radius: 30px;
+    border-color: #DDDDDD;
+    font-family: CrocWebRegular;
+    font-size: 20px;
   }
 </style>

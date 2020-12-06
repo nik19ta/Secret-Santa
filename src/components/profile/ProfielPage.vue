@@ -4,8 +4,8 @@
   <button class="button_exit" @click='exit' name="button">На стартовую страницу</button>
   <div class="cards">
     <ProfileCard @gift_is_ready='gift_is_ready' :giver='giver' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
-    <ProfilePresentCard v-if='!isAdmin' :giver='giver' />
-    <admin v-if='isAdmin' />
+    <ProfilePresentCard v-if='!isAdmin' :giver='giver' @status2='status2' />
+    <admin v-if='isAdmin' @gotolk='gotolk' />
   </div>
 </div>
 </template>
@@ -39,8 +39,15 @@ export default {
     this.get_user_email()
   },
   methods: {
+    status2() {
+      this.dataProf.status = 3
+    },
+    gotolk() {
+      this.isAdmin = !this.isAdmin;
+      this.isAdminbtn = !this.isAdminbtn;
+    },
     get_user_email() {
-      fetch(` http://194.242.120.163:3650/get_user_email?p=${this.dataProf.isPart}`, {
+      fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -55,7 +62,7 @@ export default {
       .catch(err => console.log(err))
     },
     get_user_giver() {
-      fetch(`http://194.242.120.163:3650/get_user_giver?p=${this.dataProf.gmail}`, {
+      fetch(`http://localhost:3650/get_user_giver?p=${this.dataProf.gmail}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -74,7 +81,7 @@ export default {
     },
     gift_is_ready(data) {
       console.log(data);
-      fetch(`http://194.242.120.163:3650/gift_is_ready`, {
+      fetch(`http://localhost:3650/gift_is_ready`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -88,8 +95,7 @@ export default {
       })
       .then(response => response.text())
       .then((response) => {
-        alert('Успех!')
-        this.dataProf['status'] =2
+        alert('Ждите подтверждения')
         console.log(JSON.parse(response).data);
         this.giver = JSON.parse(response).data;
       })

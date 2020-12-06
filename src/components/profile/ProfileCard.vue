@@ -41,7 +41,7 @@
       </div>
       <div>
         <div class="row" >
-          <button class="voucher">Скачать ваучер на доставку</button>
+          <button class="voucher">Заказать доставку подарка</button>
           <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_2">
             <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Для того, чтобы заказать курьера и отправить подарок, за день до отправки напиши об этом на рассылку "Секретари" и eskvortsova@croc.ru.</p>
@@ -70,13 +70,20 @@
           <option value="">Лично</option>
           <option value="">Через HR</option>
         </select> -->
-        <button @click="gift_is_ready" class='disabled' >Подарок готов</button>
+      <div class="row" >
+        <button @click="gift_is_ready" class='disabled' >Подарок отправлен</button>
+          <!-- <button @click="discount" class="discount">Получить скидку</button> -->
+          <img @mouseenter="() => start(8)" @mouseleave="() => stop(8)" class="info_img img_8" src="../../assets/green_info.png" alt="info">
+          <div class="text_ps ps_8">
+            <p class="about_text">Нажимай, как только ты отправишь подарок курьерской службой и напишешь пожелание. У того, для кого ты стал Тайным Сантой, в личном кабинете появится название подарка и пожелание от тебя, а мы будем знать, что пора активировать твою скидку ☺️</p>
+          </div>
+        </div>
       </div>
       <div class="row" >
           <button @click="discount" class="discount">Получить скидку</button>
           <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
           <div class="text_ps ps_3">
-            <p class="about_text">Ты сможешь получить скидку в декабрьском боброшопе после того, как отправишь свой подарок.</p>
+            <p class="about_text">Ты можешь получить скидку в декабрьском Боброшопе после того, как курьер заберет твой подарок. Скидка будет активирована автоматически администратором Тайного Санты. Будут вопросы - пиши  ESkvortsova@croc.ru</p>
           </div>
         </div>
       <hr>
@@ -152,7 +159,7 @@ export default {
     },
     discount() {
       if (this.dataProf.status > 1) {
-        fetch(` http://194.242.120.163:3650/get_discount`, {
+        fetch(` http://localhost:3650/get_discount`, {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -181,13 +188,14 @@ export default {
 </script>
 
 <style scoped>
+
 .step{
   height: 210px;
 }
 .disabled{
   
 }
-.img_3{
+.img_3,.img_8 {
   margin-bottom: -35px;
 }
 .about_text {
@@ -243,6 +251,7 @@ export default {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     min-height: 1440px;
     position: relative;
+    padding-bottom: 40px;
   }
   .form {
     display: flex;
@@ -467,8 +476,8 @@ export default {
       color: #00A460;
     }
     .text_ps{
-      right: -16%;
-      max-width: 350px;
+      /* right: -16%; */
+      /* max-width: 350px; */
     }
     .about_text {
       font-size: 14px;
@@ -545,7 +554,7 @@ export default {
       font-size: 14px;
     }
     .text_ps{
-      right: -15%;
+      right: -20%;
       max-width: 230px;
     }
     .about_text {
