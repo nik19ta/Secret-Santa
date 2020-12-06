@@ -17,11 +17,11 @@
               <p class="name">всего</p>
             </div>
             <div class="col">
-              <p class="numbers">{{numbers2}}</p>
+              <p class="numbers">{{numbers2 < 0? 0:numbers2}}</p>
               <p class="name">дп</p>
             </div>
             <div class="col">
-              <p class="numbers">{{numbers3}}</p>
+              <p class="numbers">{{numbers3 < 0? 0:numbers3}}</p>
               <p class="name">из отдела</p>
             </div>
           </div>
