@@ -47,7 +47,7 @@ export default {
       this.isAdminbtn = !this.isAdminbtn;
     },
     get_user_email() {
-      fetch(` http://localhost:3650/get_user_email?p=${this.dataProf.isPart}`, {
+      fetch(` http://194.242.120.163:3650/get_user_email?p=${this.dataProf.isPart}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export default {
       .catch(err => console.log(err))
     },
     get_user_giver() {
-      fetch(`http://localhost:3650/get_user_giver?p=${this.dataProf.gmail}`, {
+      fetch(`http://194.242.120.163:3650/get_user_giver?p=${this.dataProf.gmail}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ export default {
     },
     gift_is_ready(data) {
       console.log(data);
-      fetch(`http://localhost:3650/gift_is_ready`, {
+      fetch(`http://194.242.120.163:3650/gift_is_ready`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

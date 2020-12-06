@@ -72,7 +72,7 @@
       gift_r() {
         const vm = this;
         if (this.giver.status > 1) {
-          fetch(` http://localhost:3650/status_edit`, {
+          fetch(` http://194.242.120.163:3650/status_edit`, {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'

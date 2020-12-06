@@ -159,7 +159,7 @@ export default {
     },
     discount() {
       if (this.dataProf.status > 1) {
-        fetch(` http://localhost:3650/get_discount`, {
+        fetch(` http://194.242.120.163:3650/get_discount`, {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
