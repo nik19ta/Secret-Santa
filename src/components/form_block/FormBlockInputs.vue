@@ -6,21 +6,21 @@
     <div class="all" > 
       <label for="about">Email</label>
       <div class="row" >  
-      <input id="about" type="text" v-model="email" required>
-      <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
+      <input class="pppp" id="about" type="text" v-model="email" required>
+      <!-- <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
       <div class="text_ps ps_1">
         <p class="about">Здесь ты можешь рассказать о том, что тебе интересно, своих увлечениях и хобби.</p>
-      </div>
+      </div> -->
       </div>
     </div>   
     <div class="all" > 
       <label for="about">Пароль</label>
       <div class="row" >  
-      <input id="about" type="password" v-model="password" required>
-      <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
+      <input class="pppp" id="about" type="password" v-model="password" required>
+      <!-- <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
       <div class="text_ps ps_1">
         <p class="about">Здесь ты можешь рассказать о том, что тебе интересно, своих увлечениях и хобби.</p>
-      </div>
+      </div> -->
       </div>
     </div>   
     <p class="title">Помоги своему Санте - расскажи о себе:</p>
@@ -143,6 +143,9 @@ export default {
 </script>
 
 <style scoped>
+.pppp{
+  width: 87%;
+}
 .all{
   width: 100%;
   position: relative;
