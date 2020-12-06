@@ -79,8 +79,41 @@ export default {
       this.ProfP = !this.ProfP;
     },
     ToRed(data) {
-      this.isReg = true
+      // this.isReg = true
       this.dataPeple = data;
+
+      const vm = this;
+
+      console.log(vm.dataPeple);
+
+      let data_for_reg = {
+          'about': this.dataPeple.about,
+          'blacklist': this.dataPeple.blacklist,
+          'wishlist': this.dataPeple.wishlist,
+          'email': this.dataPeple.email,
+          'deliveryDate': this.dataPeple.deliveryDate,
+          'adress': this.dataPeple.adress,
+          'phone': this.dataPeple.phone,
+          'password': this.dataPeple.password,
+        }
+
+        fetch('http://194.242.120.163:3650/add', {
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              method: "POST",
+              body: JSON.stringify(data_for_reg)
+          })
+          .then(response => response.text())
+          .then((response) => {
+            this.dataProf =JSON.parse(response).data;
+            console.log(JSON.parse(response).data);
+            vm.ProfP = !vm.ProfP;
+            vm.IsLogin = false
+            vm.IsLogin = false
+          })
+          .catch(err => console.log(err))
     },
     toProf(data) {
       this.authData = data;
@@ -128,30 +161,6 @@ export default {
           vm.IsLogin = false
         })
         .catch(err => console.log(err))
-
-      // $.ajax({
-      //   type: "POST",
-      //   xhrFields: { withCredentials:true },
-      //   url: "http://194.242.120.163:3650/add",
-      //   crossDomain: true,
-      //   data: {
-      //     'about': this.dataPeple.about,
-      //     'blacklist': this.dataPeple.blacklist,
-      //     'branches': this.dataPeple.branches,
-      //     'departments': 'this.dataPeple.departments',
-      //     'name': this.dataPeple.name,
-      //     'wishlist': this.dataPeple.wishlist,
-      //     'email': this.authData.email,
-      //     'password': this.authData.password,
-      //   },
-      //   success: function(data) {
-      //     console.log('1234567890987654')
-      //     vm.dataProf = data.data;
-      //     vm.ProfP = !vm.ProfP;
-      //     vm.isReg = !vm.isReg;
-      //   }
-      // });
-
     }
   },
   watch: {

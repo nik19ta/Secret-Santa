@@ -1,7 +1,29 @@
 <template>
 <div class="wrapper">
   <form class="form">
-    <p class="title">Помоги своему Санте – заполни небольшую форму о себе</p>
+
+    <p class="title" >Зарегистрируйся прямо сейчас:</p>
+    <div class="all" > 
+      <label for="about">Email</label>
+      <div class="row" >  
+      <input id="about" type="text" v-model="email" required>
+      <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
+      <div class="text_ps ps_1">
+        <p class="about">Здесь ты можешь рассказать о том, что тебе интересно, своих увлечениях и хобби.</p>
+      </div>
+      </div>
+    </div>   
+    <div class="all" > 
+      <label for="about">Пароль</label>
+      <div class="row" >  
+      <input id="about" type="password" v-model="password" required>
+      <img @mouseenter="() => start(1)" @mouseleave="() => stop(1)" class="info img_1" src="../../assets/green_info.png" alt="info">
+      <div class="text_ps ps_1">
+        <p class="about">Здесь ты можешь рассказать о том, что тебе интересно, своих увлечениях и хобби.</p>
+      </div>
+      </div>
+    </div>   
+    <p class="title">Помоги своему Санте - расскажи о себе:</p>
 
 
     <div class="all" > 
@@ -86,11 +108,14 @@ export default {
             blacklist: '',
             deliveryDate1: '',
             deliveryDate2: '',
-            adress: ''
+            adress: '',
+            email: '',
+            password: '',
         }
     },
           methods: {
               registr() {
+                if (this.email.split('@')[1] == 'croc.ru') {
                   this.$emit('myEvent', {
                       'about': this.about,
                       'wishlist': this.wishlist,
@@ -98,7 +123,12 @@ export default {
                       'deliveryDate': `${this.deliveryDate1}-${this.deliveryDate2}`,
                       'adress': this.adress,
                       'phone': this.phone,
+                      'login': this.phone,
+                      'password': this.phone,
                   })
+                } else {
+                  alert('Почта должна быть @croc.ru')
+                }
               },
               start(data) {
                 document.querySelector(`.ps_${data}`).classList.add("vis");
