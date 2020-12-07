@@ -123,7 +123,7 @@ export default {
                       'deliveryDate': `${this.deliveryDate1}-${this.deliveryDate2}`,
                       'adress': this.adress,
                       'phone': this.phone,
-                      'login': this.phone,
+                      'email': this.email,
                       'password': this.phone,
                   })
                 } else {

@@ -86,6 +86,7 @@ export default {
 
       console.log(vm.dataPeple);
 
+
       let data_for_reg = {
           'about': this.dataPeple.about,
           'blacklist': this.dataPeple.blacklist,
@@ -107,11 +108,14 @@ export default {
           })
           .then(response => response.text())
           .then((response) => {
-            this.dataProf =JSON.parse(response).data;
-            console.log(JSON.parse(response).data);
-            vm.ProfP = !vm.ProfP;
-            vm.IsLogin = false
-            vm.IsLogin = false
+            if (JSON.parse(response).status ==  "Такой пользователь уже существует") {
+              alert("Пользователь с такой почтой уже существует")
+            } else {
+              this.dataProf =JSON.parse(response).data;
+              vm.ProfP = !vm.ProfP;
+              vm.IsLogin = false
+              vm.IsLogin = false
+            }
           })
           .catch(err => console.log(err))
     },
