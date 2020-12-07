@@ -124,7 +124,7 @@ export default {
                       'adress': this.adress,
                       'phone': this.phone,
                       'email': this.email,
-                      'password': this.phone,
+                      'password': this.password,
                   })
                 } else {
                   alert('Почта должна быть @croc.ru')
