@@ -201,7 +201,11 @@ export default {
   }
   .cards {
     display: flex;
-    justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+    /* display: flex;
+    justify-content: space-around; */
   }
   button {
     position: absolute;

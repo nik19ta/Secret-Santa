@@ -1,117 +1,136 @@
 <template>
-<div class="card">
-  <div class="wrapper">
-    <p class="title">ты стал <br>тайным сантой</p>
-    <div class="about_block">
-      <div class="user">
-        <img :src="require(`../../assets/${dataProf.img}_.png`)" class="avatar">
-        <p v-if="this.dataProf.isPart == false" class="name">Пары нет.</p>
-        <p v-if="this.dataProf.isPart" class="name">{{par.Name}}</p>
-        <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="about">{{par.aboutMe}}</p>
-      </div>
-      <div class="text">
-        <div class="div_in_block" >
-        <p class="name">О колллеге: </p>
-        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.aboutMe}}</p>
+  <div class="card">
+    <div class="wrapper">
+      <p class="title">ты стал <br>тайным сантой</p>
+      <div class="about_block">
+        <div class="user">
+          <img :src="require(`../../assets/${dataProf.img}_.png`)" class="avatar">
+          <p v-if="this.dataProf.isPart == false" class="name">Пары нет.</p>
+          <p v-if="this.dataProf.isPart" class="name">{{par.Name}}</p>
+          <p v-if="this.dataProf.isPart == false" class="about">Мы пока не подобрали вам пару.</p>
+          <p v-if="this.dataProf.isPart" class="about">{{par.gmail}}</p>
+
+          <div class="div_in_block">
+            <p class="name">Удобные даты и время доставки: </p>
+            <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+            <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.deliveryDate}}</p>
+          </div>
+
+          <div class="div_in_block">
+            <p class="name">Адресс доставки: </p>
+            <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+            <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.adress}}</p>
+          </div>
         </div>
-        <div class="div_in_block" >
-        <p class="name">Он точно будет рад:</p>
-        <p v-if="this.dataProf.isPart == false" class=" text_in_div_ab">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class=" text_in_div_ab">{{par.whiteList}}</p>
-        </div>
-        <div class="div_in_block" >
-        <p class="name">Лучше не дарить:</p>
-        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.blackList}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      <div class="div_in_block">
-        <p class="name">Адресс доставки: </p>
-        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.adress}}</p>
-      </div>
-      <div class="div_in_block">
-        <p class="name">Удобные даты и время доставки: </p>
-        <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
-        <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.deliveryDate}}</p>
-      </div>
-      <div>
-        <div class="row" >
-          <button class="voucher">Заказать доставку подарка</button>
-          <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 " src="../../assets/green_info.png" alt="info">
-          <div class="text_ps ps_2">
-            <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Для того, чтобы заказать курьера и отправить подарок, за день до отправки напиши об этом на рассылку "Секретари" и eskvortsova@croc.ru.</p>
+        <div class="text">
+          <div class="div_in_block">
+            <p class="name">О колллеге: </p>
+            <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+            <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.aboutMe}}</p>
+          </div>
+          <div class="div_in_block">
+            <p class="name">Он точно будет рад:</p>
+            <p v-if="this.dataProf.isPart == false" class=" text_in_div_ab">Мы пока не подобрали вам пару.</p>
+            <p v-if="this.dataProf.isPart" class=" text_in_div_ab">{{par.whiteList}}</p>
+          </div>
+          <div class="div_in_block">
+            <p class="name">Лучше не дарить:</p>
+            <p v-if="this.dataProf.isPart == false" class="text_in_div_ab">Мы пока не подобрали вам пару.</p>
+            <p v-if="this.dataProf.isPart" class="text_in_div_ab">{{par.blackList}}</p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="present_info">
-      <hr>
-      <div class="form" >
-        <p class="name">Если ты уже подготовил подарок, расскажи о нем:</p>
-        <label for="present_name">Название подарка</label>
-        <div class="input_block">
-          <input id="present_name" type="text" v-model="present_name">
-          <div class="info_visited"></div>
+      <div class="info">
+        <div>
+          <div class="row">
+            <button class="voucher">Заказать доставку подарка</button>
+            <img @mouseenter="() => start(2)" @mouseleave="() => stop(2)" class="info_img img_2 "
+              src="../../assets/green_info.png" alt="info">
+            <div class="text_ps ps_2">
+              <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Для того, чтобы заказать
+                курьера и отправить подарок, за день до отправки напиши об этом на рассылку "Секретари" и
+                eskvortsova@croc.ru.</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="present_info">
+        <hr>
+        <div class="form">
+          <p class="name">Если ты уже подготовил подарок, расскажи о нем:</p>
+          <label for="present_name">Название подарка</label>
+          <div class="input_block">
+            <input id="present_name" type="text" v-model="present_name">
+            <div class="info_visited"></div>
+          </div>
 
-        <label for="wish">Пожелание</label>
-        <div class="input_block">
-          <input id="wish" type="text" v-model="wish">
-          <div class="info"></div>
-        </div>
+          <label for="wish">Пожелание</label>
+          <div class="input_block">
+            <input id="wish" type="text" v-model="wish">
+            <div class="info"></div>
+          </div>
           <!--         
         <label for="gift">Как будешь дарить</label>
         <select name="gift" v-model="gift" id="gift">
           <option value="">Лично</option>
           <option value="">Через HR</option>
         </select> -->
-      <div class="row" >
-        <button @click="gift_is_ready" class='disabled' >Подарок отправлен</button>
-          <!-- <button @click="discount" class="discount">Получить скидку</button> -->
-          <img @mouseenter="() => start(8)" @mouseleave="() => stop(8)" class="info_img img_8" src="../../assets/green_info.png" alt="info">
-          <div class="text_ps ps_8">
-            <p class="about_text">Нажимай, как только ты отправишь подарок курьерской службой и напишешь пожелание. У того, для кого ты стал Тайным Сантой, в личном кабинете появится название подарка и пожелание от тебя, а мы будем знать, что пора активировать твою скидку ☺️</p>
+          <div class="row">
+            <button @click="gift_is_ready" class='disabled'>Подарок отправлен</button>
+            <!-- <button @click="discount" class="discount">Получить скидку</button> -->
+            <img @mouseenter="() => start(8)" @mouseleave="() => stop(8)" class="info_img img_8"
+              src="../../assets/green_info.png" alt="info">
+            <div class="text_ps ps_8">
+              <p class="about_text">Нажимай, как только ты отправишь подарок курьерской службой и напишешь пожелание. У
+                того, для кого ты стал Тайным Сантой, в личном кабинете появится название подарка и пожелание от тебя, а
+                мы будем знать, что пора активировать твою скидку ☺️</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <button @click="discount" class="discount">Получить скидку</button>
+          <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 "
+            src="../../assets/green_info.png" alt="info">
+          <div class="text_ps ps_3">
+            <p class="about_text">Ты можешь получить скидку в декабрьском Боброшопе после того, как курьер заберет твой
+              подарок. Скидка будет активирована автоматически администратором Тайного Санты. Будут вопросы - пиши
+              ESkvortsova@croc.ru</p>
+          </div>
+        </div>
+        <hr>
+        <div class="status">
+          <div class="first_step step">
+            <img
+              :src="dataProf.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)"
+              alt="" class="step_img">
+            <div :class="[dataProf.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
+            <p :class="[dataProf.status > 0 ? 'about_active' : '']" class="about">Подготовка подарка</p>
+          </div>
+          <div class="status_hr_inactive"></div>
+
+          <div class="second_step step">
+            <img
+              :src="dataProf.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)"
+              alt="" class="step_img">
+            <div :class="[dataProf.status > 1 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
+            <p :class="[dataProf.status > 1 ? 'about_active' : '']" class="about">Подарок ждет своего получателя</p>
+          </div>
+          <div class="status_hr_inactive"></div>
+          <div class="third_step step">
+            <img
+              :src="dataProf.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)"
+              alt="" class="step_img">
+            <div :class="[dataProf.status > 2 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
+            <p :class="[dataProf.status > 2 ? 'about_active' : '']" class="about">Ура! Твой подарок получили :)</p>
           </div>
         </div>
       </div>
-      <div class="row" >
-          <button @click="discount" class="discount">Получить скидку</button>
-          <img @mouseenter="() => start(3)" @mouseleave="() => stop(3)" class="info_img img_3 " src="../../assets/green_info.png" alt="info">
-          <div class="text_ps ps_3">
-            <p class="about_text">Ты можешь получить скидку в декабрьском Боброшопе после того, как курьер заберет твой подарок. Скидка будет активирована автоматически администратором Тайного Санты. Будут вопросы - пиши  ESkvortsova@croc.ru</p>
-          </div>
-        </div>
-      <hr>
-      <div class="status">
-        <div class="first_step step">
-          <img  :src="dataProf.status > 0 ? require(`../../assets/profile_vectors/active/1step.svg`) : require(`../../assets/profile_vectors/inactive/1step.svg`)" alt="" class="step_img">
-          <div  :class="[dataProf.status > 0 ? 'circle_active' : 'circle_inactive']"></div>
-          <p :class="[dataProf.status > 0 ? 'about_active' : '']" class="about">Подготовка подарка</p>
-        </div>
-        <div class="status_hr_inactive"></div>
-
-        <div class="second_step step">
-          <img :src="dataProf.status > 1 ? require(`../../assets/profile_vectors/active/2step.svg`) : require(`../../assets/profile_vectors/inactive/2step.svg`)" alt="" class="step_img">
-          <div :class="[dataProf.status > 1 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
-          <p :class="[dataProf.status > 1 ? 'about_active' : '']"  class="about">Подарок ждет своего получателя</p>
-        </div>
-        <div class="status_hr_inactive"></div>
-        <div class="third_step step">
-          <img :src="dataProf.status > 2 ? require(`../../assets/profile_vectors/active/3step.svg`) : require(`../../assets/profile_vectors/inactive/3step.svg`)" alt="" class="step_img">
-          <div :class="[dataProf.status > 2 ? 'circle_active' : 'circle_inactive']" class="circle_inactive"></div>
-          <p :class="[dataProf.status > 2 ? 'about_active' : '']"  class="about">Ура! Твой подарок получили :)</p>
-        </div>
+      <p v-if="isSend" class="name">Иван Иванов уже получил твой подарок и написал тебе: </p>
+      <div v-if="isSend" class="feedback">
+        <p class="feedbackText">asdasd</p>
       </div>
     </div>
-    <p v-if="isSend" class="name">Иван Иванов уже получил твой подарок и написал тебе: </p>
-    <div v-if="isSend" class="feedback"><p class="feedbackText">asdasd</p></div>
   </div>
-</div>
 </template>
 
 <script>
@@ -238,7 +257,6 @@ export default {
   }
 .div_in_block{
   width: 100%;
-  height: 50px;
   margin-bottom: 20px;
 }
   .card {
@@ -381,9 +399,9 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
+    /* position: absolute; */
+    /* bottom: 30px; */
+    /* left: 0; */
   }
   .status .about, .about_active{
     text-align: center;
@@ -430,7 +448,7 @@ export default {
   }
   .about_block {
     display: flex;
-    height: 270px;
+    /* height: 270px; */
   }
   .about {
     color: #494949;
@@ -455,7 +473,7 @@ export default {
     color: #494949;
     font-size: 16px;
     /* min-height: 40px; */
-    margin-top: -10px;
+    /* margin-top: -10px; */
   }
   @media screen and (max-width: 1665px) {
     .card {
@@ -474,10 +492,6 @@ export default {
     .about_active {
       font-size: 15px;
       color: #00A460;
-    }
-    .text_ps{
-      /* right: -16%; */
-      /* max-width: 350px; */
     }
     .about_text {
       font-size: 14px;

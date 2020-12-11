@@ -110,12 +110,12 @@
   .card {
     margin-top: 40px;
     margin-right: 40px;
-    min-height: 80%;
+    /* min-height: 80%; */
     min-width: 45%;
     background-color: white;
     border-radius: 40px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-    max-height: 1440px;
+    /* max-height: 1440px; */
     position: relative;
     padding-bottom: 40px;
   }
@@ -156,6 +156,7 @@
     position: absolute;
     bottom: 30px;
     left: 0;
+    padding: 10px;
   }
   .status .about, .about_active{
     text-align: center;
@@ -302,12 +303,12 @@
     .card {
       margin-top: 40px;
       margin-left: 40px;
-      min-height: 1350px;
+      /* min-height: 1350px; */
       max-width: 20%;
       background-color: white;
       border-radius: 40px;
       box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
-      max-height: 1300px;
+      /* max-height: 1300px; */
     }
     label {
       color: #6B6B6B;
@@ -370,7 +371,8 @@
   }
   @media screen and (max-width: 1430px) {
     .card {
-      min-height: 1370px;
+      /* min-height: 1370px; */
+      /* height: 100%; */
     }
 
     .photos img {
