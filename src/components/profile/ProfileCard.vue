@@ -269,7 +269,7 @@ export default {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
     min-height: 1440px;
     position: relative;
-    padding-bottom: 40px;
+    padding-bottom: 160px;
   }
   .form {
     display: flex;
@@ -399,9 +399,10 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* position: absolute; */
-    /* bottom: 30px; */
-    /* left: 0; */
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    padding: 10px;
   }
   .status .about, .about_active{
     text-align: center;
