@@ -49,8 +49,7 @@
             <td>Нет данных</td>
             <td>Нет данных</td>
             <td>{{get_user(item.isPart)['status'] == null? 'Нет данных' : get_user(item.isPart)['status'] == 0 ? "Пары нет" : get_user(item.isPart)['status'] == 1 ? "Подготовка подарка" : get_user(item.isPart)['status'] == 2 ? "Подарок отправлен" : get_user(item.isPart)['status'] == 3? "Подарок получен" : 0 }}</td>
-            <td v-if="get_user(item.isPart)['statusT'] == true" > <button @click="() => confirm(get_user(item.isPart))" >Подтвердить</button> </td>
-            <!-- <td> {{get_user(item.isPart)}} </td> -->
+            <td v-if='item["statusT"]' > <button @click='() => confirm(item["gmail"])' > Подтвердить второй статус</button> </td>
           </tr>
         </table>
         </div>
@@ -82,7 +81,7 @@ export default {
     }
   },
   methods: {
-    confirm(data) {
+    confirm(email_user) {
       const vm = this;
       fetch(` http://194.242.120.163:3650/ok_gm`, {
         headers: {
@@ -91,7 +90,7 @@ export default {
         },
         method: "POST",
         body: JSON.stringify({
-            email: data.gmail
+            email: email_user
         })
       })
       .then(response => response.text())
