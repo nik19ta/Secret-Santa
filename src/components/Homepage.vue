@@ -3,7 +3,7 @@
   <MainBlock :loginStatus='loginStatus' @loginEnd='loginEnd' @toLogin='toLogin' />
   <div class="side_wrapper">
     <AboutBlock />
-    <FormBlock @ToRed='ToRed' />
+    
     <UsersFeed />
   </div>
 </div>
