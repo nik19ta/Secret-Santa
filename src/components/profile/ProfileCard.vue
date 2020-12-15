@@ -48,8 +48,7 @@
               src="../../assets/green_info.png" alt="info">
             <div class="text_ps ps_2">
               <p class="about_text">Мы уже подготовили и оплатили доставку твоего подарка. Для того, чтобы заказать
-                курьера и отправить подарок, за день до отправки напиши об этом на рассылку "Секретари" и
-                eskvortsova@croc.ru.</p>
+                курьера и отправить подарок, за день до отправки напиши об этом TPrigarina@croc.ru и ESkvortsova@croc.ru.</p>
             </div>
           </div>
         </div>
