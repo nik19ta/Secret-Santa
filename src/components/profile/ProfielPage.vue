@@ -5,7 +5,7 @@
   <button type="button" @click="edit" class="btn_reg_info" name="button">Редактировать профиль</button>
   <div class="cards">
     <ProfileCard @gift_is_ready='gift_is_ready' :giver='giver' :dataProf='dataProf' v-if='!isAdmin' :isSend='isSend' :par='par'  />
-    <ProfilePresentCard v-if='!isAdmin' :giver='giver' @status2='status2' />
+    <ProfilePresentCard v-if='!isAdmin' :giver='giver' :dataProf='dataProf' @status2='status2' />
     <admin v-if='isAdmin' @gotolk='gotolk' />
   </div>
   <div v-if="isEdit" class="edit_info" >

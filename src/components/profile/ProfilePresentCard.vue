@@ -18,13 +18,13 @@
           <textarea name="comment" v-model="emotions"></textarea>
           <div class="info_visited"></div>
         </div>
-        <button class="add_photo">Добавить фото</button>
+        <input type="file" class="input_file" @change="previewFiles" placeholder="Поменять аватар" > 
       </div>
-      <div class="photos">
-        <img src="../../assets/add_photo.png" alt="">
-        <img src="../../assets/add_photo.png" alt="">
-        <img src="../../assets/add_photo.png" alt="">
-        <img src="../../assets/add_photo.png" alt="">
+       <div class="photos">
+        <img :src="data[0] ? data[0] : require(`../../assets/add_photo.png`) " alt="">
+        <img :src="data[1] ? data[1] : require(`../../assets/add_photo.png`) " alt="">
+        <img :src="data[2] ? data[2] : require(`../../assets/add_photo.png`) " alt="">
+        <img :src="data[3] ? data[3] : require(`../../assets/add_photo.png`) " alt="">
       </div>
       <button @click="send" class="send">Отправить Тайному Санте</button>
       <div class="status">
@@ -65,9 +65,69 @@
   export default {
     name: 'ProfilePresentCard',
     components: {},
+    data: function() {
+      return {
+        data: [],
+        isloader: false,
+      }
+    },
     methods: {
+      async previewFiles(event) {
+          const toBase64 = file => new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.readAsDataURL(file);
+              reader.onload = () => resolve(reader.result);
+              reader.onerror = error => reject(error);
+          });
+          let photo = await toBase64(event.target.files[0]);
+          if (this.giver.gmail == undefined) {
+            alert('У вас нет пары')
+          } else {
+            if (this.data.length >= 4) {            
+                alert('Можно добавить токлько 4 фото')
+                } else {
+                this.data.push(photo)
+            }
+          }
+      },
       send() {
-        console.log('send');
+
+        if (this.giver.gmail != undefined) {  
+          this.isloader = !this.isloader;
+            fetch(` http://localhost:3650/say_thanks`, {
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              method: "POST",
+              body: JSON.stringify({
+                emailfrom: this.dataProf.gmail,
+                emailto: this.giver.gmail,
+                photos: this.data,
+                text: this.emotions,
+              })
+            })
+            .then((response) =>{
+              if (response.status != 413) {
+                response.text()
+                alert("Успех")
+              } else {
+                alert('Вес картинок слишком большой')
+              }
+            })
+            .then((response) => {
+              this.isloader = !this.isloader;
+            })
+            .catch((err) => { this.isloader = !this.isloader; alert('Ошибка') })
+
+          console.log();
+          this.isloader = !this.isloader;
+
+
+
+        } else {
+          alert("У вас нет пары")
+        }
       },
       gift_r() {
         const vm = this;
@@ -96,6 +156,7 @@
     },
     props: {
       giver: {},
+      dataProf: {},
   },
   mounted() {
     console.log(this.giver.status);
@@ -414,5 +475,14 @@ button {
     border-color: #DDDDDD;
     font-family: CrocWebRegular;
     font-size: 20px;
+  }
+  .input_file{
+    margin-top: 20px;
+    width: 250px;
+    height: 40px;
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 40px;
   }
 </style>
