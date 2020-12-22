@@ -94,7 +94,7 @@
 
         if (this.giver.gmail != undefined) {  
           this.isloader = !this.isloader;
-            fetch(` http://localhost:3650/say_thanks`, {
+            fetch(`http://194.242.120.163:3650/say_thanks`, {
               headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
